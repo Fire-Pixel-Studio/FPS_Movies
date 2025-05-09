@@ -87,7 +87,7 @@
                     <small>Streaming Channels</small>
                 </div>
                 <div class="btn">
-                    <button onclick="document.getElementById('videoModal').style.display='flex'">
+                    <button id="watchNowBtn">
                         <i class="fa-solid fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -99,82 +99,7 @@
     </div>
 </section>
 
-
-    <!-- tvs series section starts  -->
-    <section class="tv-series same">
-      <div class="header">
-        <small>best tv series</small>
-        <h4>World Best TV Series</h4>
-      </div>
-      <div class="movie-card">
-        <ul class="wrapper">
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="images/series-1.png" alt="" /></a>
-            </div>
-            <div class="title">
-              <a href=""><h4>Moon Knight</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>2K</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 47 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.6</span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="images/series-2.png" alt="" /></a>
-            </div>
-            <div class="title">
-              <a href=""><h4>Halo</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>2K</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 59 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.8</span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="images/series-3.png" alt="" /></a>
-            </div>
-            <div class="title">
-              <a href=""><h4>Viking valhalla</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>2K</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 51 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.3</span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="images/series-4.png" alt="" /></a>
-            </div>
-            <div class="title">
-              <a href=""><h4>Money Heist</h4></a>
-              <span>2017</span>
-            </div>
-            <div class="footer">
-              <span>4K</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 70 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.3</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+<!-- other content -->
 
     <!-- footer section start -->
     <footer>
@@ -218,22 +143,34 @@
         </div>
       </div>
     </footer>
+
+    <!-- Load core JS -->
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
-        <script src="js/script.js"></script>
-    <script src="js/navbar.js"></script>
 
-    <!-- Dynamically load the modal -->
+    <!-- Load and bind modal -->
     <script>
       fetch('video_modal.html')
         .then(res => res.text())
         .then(html => {
           document.body.insertAdjacentHTML('beforeend', html);
+
+          const watchNowBtn = document.getElementById('watchNowBtn');
+          const modal = document.getElementById('videoModal');
+          const closeBtn = document.getElementById('modalClose');
+          const video = document.getElementById('modalVideo');
+
+          watchNowBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            video.play();
+          });
+
+          closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+          });
         });
     </script>
-  </body>
-</html>
-
-
   </body>
 </html>
