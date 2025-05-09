@@ -1,7 +1,99 @@
-<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000cc; z-index:9999; text-align:center;">
-    <div style="position:relative; top:5%; width:90%; max-width:800px; margin:auto;">
-        <span style="color:white; position:absolute; top:-30px; right:0; cursor:pointer; font-size:30px;" onclick="document.getElementById('videoModal').style.display='none'">&times;</span>
-        <iframe src="https://drive.google.com/file/d/1P-j7VD9YiVA0iqhvJiQUf3n0WkXGZabr/preview"
-                width="100%" height="480" allow="autoplay" allowfullscreen></iframe>
+<!-- video_modal.html -->
+<div id="videoModal" class="video-modal">
+  <div class="video-modal-content">
+    <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
+    <div class="video-wrapper">
+      <iframe
+        id="videoIframe"
+        src="https://drive.google.com/file/d/1P-j7VD9YiVA0iqhvJiQUf3n0WkXGZabr/preview"
+        frameborder="0"
+        allow="autoplay"
+        allowfullscreen
+      ></iframe>
     </div>
+  </div>
 </div>
+
+<style>
+  .video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: #000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .video-modal-close {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    background: #ff3e3e;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff3e3eaa;
+    transition: background 0.3s;
+  }
+
+  .video-modal-close:hover {
+    background: #ff1a1a;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+  }
+</style>
+
+<script>
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    modal.style.display = 'none';
+    
+    // Stop video playback by resetting the src
+    const src = iframe.src;
+    iframe.src = '';
+    iframe.src = src;
+  }
+
+  // Optional: Allow clicking outside modal to close
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('videoModal');
+    const content = document.querySelector('.video-modal-content');
+    if (e.target === modal) {
+      closeVideoModal();
+    }
+  });
+</script>
