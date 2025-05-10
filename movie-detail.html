@@ -23,21 +23,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
-    <script src="js/movie-loader.js" defer></script>
   </head>
   <body>
     <!-- navbar starts -->
     <header>
       <nav class="navbar">
         <div class="logo">
-          <a href="index.html"><img src="images/logo.svg" alt="" /></a>
+          <a href=""><img src="images/logo.svg" alt="" /></a>
         </div>
         <ul class="nav-list">
           <div class="logo">
-            <a href="index.html"><img src="images/logo.svg" alt=""></a>
+            <a href=""><img src="images/logo.svg" alt=""></a>
             <button class="close"><i class="fa-solid fa-xmark"></i></button>
           </div>
-          <li class="home"><a href="index.html">home</a></li>
+          <li class="home"><a href="">home</a></li>
           <li><a href="">movie</a></li>
           <li><a href="">tv show</a></li>
           <li><a href="">web series</a></li>
@@ -55,32 +54,36 @@
 <section class="movie-detail">
     <div class="main">
         <div class="img">
-            <a href="#"><img id="movie-poster" src="" alt=""></a>
+            <a href="#"><img src="images/movie-4.png" alt=""></a>
             <i class="fa-regular fa-circle-play"></i>
         </div>
         <div class="content">
             <strong>New Episodes</strong>
-            <h4 id="movie-title"></h4>
+            <h4>Free <span>Guy</span></h4>
             <div class="badge-genre">
                 <div class="badge">
-                    <span id="movie-rating"></span>
-                    <span id="movie-quality"></span>
+                    <span>PG 13</span>
+                    <span>HD</span>
                 </div>
-                <div class="genre" id="movie-genres">
+                <div class="genre">
+                    <a href="#">Comedy</a>,
+                    <a href="#">Action</a>,
+                    <a href="#">Adventure</a>,
+                    <a href="#">Science Fiction</a>
                 </div>
             </div>
             <div class="date-time">
-                <span><i class="fa-solid fa-calendar-days"></i> <span id="movie-year"></span></span>
-                <span><i class="fa-regular fa-clock"></i> <span id="movie-duration"></span></span>
+                <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
+                <span><i class="fa-regular fa-clock"></i> 115 min</span>
             </div>
-            <p id="movie-description"></p>
+            <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
             <div class="detail-actions">
                 <div class="prime">
                     <h5>Scroll Down </h5>
                     <small>To Start Watching</small>
                 </div>
                 <div class="btn">
-                    <button id="watch-now-btn">
+                    <button onclick="window.location.href='video_modal.html';">
                         <i class="fa-solid fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -88,109 +91,56 @@
         </div>
     </div>
     <div class="download-btn">
-        <a id="download-link" href="" download>download <i class="fa-solid fa-download"></i></a>
+        <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
     </div>
 </section>
 
-<!-- upcoming movie section starts  -->
-<section class="upcoming-movie">
-  <div class="header">
-    <div class="subtitle">
-      <small>online Streaming</small>
-      <h4>Upcoming Movies</h4>
-    </div>
-    <div class="buttons">
-      <button>Movies</button>
-      <button>TV Shows</button>
-      <button>Anime</button>
-    </div>
-  </div>
-  <div class="movie-card">
-    <div class="wrapper">
-      <ul class="movie-carousel">
-        <li class="card">
-          <div class="img">
-            <a href="movie-detail.html?id=1"><img src="images/upcoming-1.png" alt="The Northman"></a>
-          </div>
-          <div class="title">
-            <a href="movie-detail.html?id=1"><h4>The Northman</h4></a>
-            <span>2022</span>
-          </div>
-          <div class="footer">
-            <span>HD</span>
-            <div class="time-rating">
-              <span><i class="fa-regular fa-clock"></i> 137 min</span>
-              <span><i class="fa-solid fa-star"></i> 8.5</span>
-            </div>
-          </div>
-        </li>
-        <li class="card">
-          <div class="img">
-            <a href="movie-detail.html?id=2"><img src="images/upcoming-2.png" alt="Doctor Strange"></a>
-          </div>
-          <div class="title">
-            <a href="movie-detail.html?id=2"><h4>Doctor Strange</h4></a>
-            <span>2022</span>
-          </div>
-          <div class="footer">
-            <span>4K</span>
-            <div class="time-rating">
-              <span><i class="fa-regular fa-clock"></i> 126 min</span>
-              <span><i class="fa-solid fa-star"></i> 8.5</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+<!-- other content -->
 
     <!-- footer section start -->
     <footer>
       <div class="main">
-        <div class="footer-top">
-          <nav>
-            <div class="logo">
-              <img src="images/logo.svg" alt="">
-            </div>
-            <ul class="list">
-              <li><a href="index.html">home</a></li>
-              <li><a href="">movie</a></li>
-              <li><a href="">tv show</a></li>
-              <li><a href="">web series</a></li>
-              <li><a href="">pricing</a></li>
-            </ul>
-          </nav>
-          <hr>
-          <div class="links">
-            <div class="text-links">
-              <a href="">faq</a>
-              <a href="">help center</a>
-              <a href="">terms of use</a>
-              <a href="">privacy</a>
-            </div>
-            <div class="social-links">
-              <a href=""><i class="fa-brands fa-facebook"></i></a>
-              <a href=""><i class="fa-brands fa-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-pinterest"></i></a>
-              <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
+ 
         <div class="footer-bottom">
           <div class="copyright">
             <p>&#169; 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
           </div>
           <div class="img">
-            <img src="images/footer-bottom-img.png" alt="">
+            <img src="images/footer-bottom-img.png" alt="" />
           </div>
         </div>
       </div>
     </footer>
 
-    <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
-
+    <!-- Load core JS -->
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
+
+    <!-- Load and bind modal -->
+    <script>
+      fetch('video_modal.html')
+        .then(res => res.text())
+        .then(html => {
+          document.body.insertAdjacentHTML('beforeend', html);
+
+          const watchNowBtn = document.getElementById('watchNowBtn');
+          const modal = document.getElementById('videoModal');
+          const closeBtn = document.getElementById('modalClose');
+          const video = document.getElementById('modalVideo');
+
+          watchNowBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            video.play();
+          });
+
+          closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+          });
+        });
+    </script>
+
+
   </body>
 </html>
