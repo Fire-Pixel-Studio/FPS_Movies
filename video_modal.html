@@ -1,111 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Detail Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/movie.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Detail Page</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/movie.css" />
 
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <a href="#"><img src="images/logo.svg" alt="" /></a>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+
+  <style>
+    .responsive-video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto 20px;
+      aspect-ratio: 16 / 9;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .responsive-video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Optional: Adjust padding on smaller screens */
+    .movie-detail {
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#"><img src="images/logo.svg" alt="" /></a>
+    </div>
+    <ul class="nav-list">
+      <div class="logo">
+        <a href="#"><img src="images/logo.svg" alt=""></a>
+        <button class="close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <li class="home"><a href="#">home</a></li>
+      <li><a href="#">movie</a></li>
+      <li><a href="#">tv show</a></li>
+      <li><a href="#">web series</a></li>
+      <li><a href="#">pricing</a></li>
+      <button class="btn">SIGN IN</button>
+    </ul>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<!-- Movie Detail Section -->
+<section class="movie-detail">
+  <div class="main">
+    <div class="img">
+      <div class="responsive-video-wrapper">
+        <iframe 
+          src="https://drive.google.com/file/d/1P-j7VD9YiVA0iqhvJiQUf3n0WkXGZabr/preview" 
+          allow="autoplay" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="content">
+      <strong>New Episodes</strong>
+      <h4>Free <span>Guy</span></h4>
+      <div class="badge-genre">
+        <div class="badge">
+          <span>PG 13</span>
+          <span>HD</span>
         </div>
-        <ul class="nav-list">
-          <div class="logo">
-            <a href="#"><img src="images/logo.svg" alt="" /></a>
-            <button class="close"><i class="fa-solid fa-xmark"></i></button>
-          </div>
-          <li class="home"><a href="#">home</a></li>
-          <li><a href="#">movie</a></li>
-          <li><a href="#">tv show</a></li>
-          <li><a href="#">web series</a></li>
-          <li><a href="#">pricing</a></li>
-          <button class="btn">SIGN IN</button>
-        </ul>
-        <div class="hamburger">
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Movie Detail Section -->
-    <section class="movie-detail">
-      <div class="main">
-        <div class="img">
-          <!-- Embedded Google Drive Video -->
-          <iframe
-            src="https://drive.google.com/file/d/1P-j7VD9YiVA0iqhvJiQUf3n0WkXGZabr/preview"
-            style="width:1280px; height:720px; display:block; margin: 0 auto; border:none;"
-            allow="autoplay"
-          ></iframe>
-          <i class="fa-regular fa-circle-play"></i>
-        </div>
-        <div class="content">
-          <strong>New Episodes</strong>
-          <h4>Free <span>Guy</span></h4>
-          <div class="badge-genre">
-            <div class="badge">
-              <span>PG 13</span>
-              <span>HD</span>
-            </div>
-            <div class="genre">
-              <a href="#">Comedy</a>,
-              <a href="#">Action</a>,
-              <a href="#">Adventure</a>,
-              <a href="#">Science Fiction</a>
-            </div>
-          </div>
-          <div class="date-time">
-            <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
-            <span><i class="fa-regular fa-clock"></i> 115 min</span>
-          </div>
-          <p>
-            A bank teller called Guy realizes he is a background character in an
-            open world video game called Free City that will soon go offline.
-          </p>
-          <div class="detail-actions">
-            <button>
-              <i class="bi bi-share-fill"></i>
-              <span>Share</span>
-            </button>
-            <div class="prime">
-              <h5>Prime Video</h5>
-              <small>Streaming Channels</small>
-            </div>
-          </div>
+        <div class="genre">
+          <a href="#">Comedy</a>,
+          <a href="#">Action</a>,
+          <a href="#">Adventure</a>,
+          <a href="#">Science Fiction</a>
         </div>
       </div>
-      <div class="download-btn">
-        <a href="images/movie-4.png" download
-          >download <i class="fa-solid fa-download"></i
-        ></a>
+      <div class="date-time">
+        <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
+        <span><i class="fa-regular fa-clock"></i> 115 min</span>
       </div>
-    </section>
-  </body>
+      <p>
+        A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.
+      </p>
+      <div class="detail-actions">
+        <button>
+          <i class="bi bi-share-fill"></i>
+          <span>Share</span>
+        </button>
+        <div class="prime">
+          <h5>Prime Video</h5>
+          <small>Streaming Channels</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-btn">
+    <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
+  </div>
+</section>
+
+</body>
 </html>
