@@ -8,21 +8,14 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/movie.css">
 
-    <!--- google font link-->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
+    <!-- Bootstrap & FontAwesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <!-- Fontawesome Link for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
   </head>
   <body>
     <!-- navbar starts -->
@@ -50,56 +43,58 @@
       </nav>
     </header>
 
-<!-- movie-detail section start -->
-<section class="movie-detail">
-    <div class="main">
+    <!-- movie-detail section start -->
+    <section class="movie-detail">
+      <div class="main">
         <div class="img">
-            <a href="#"><img src="images/movie-4.png" alt=""></a>
-            <i class="fa-regular fa-circle-play"></i>
+          <a href="#"><img src="images/movie-4.png" alt=""></a>
+          <i class="fa-regular fa-circle-play"></i>
         </div>
         <div class="content">
-            <strong>New Episodes</strong>
-            <h4>Free <span>Guy</span></h4>
-            <div class="badge-genre">
-                <div class="badge">
-                    <span>PG 13</span>
-                    <span>HD</span>
-                </div>
-                <div class="genre">
-                    <a href="#">Comedy</a>,
-                    <a href="#">Action</a>,
-                    <a href="#">Adventure</a>,
-                    <a href="#">Science Fiction</a>
-                </div>
+          <strong>New Episodes</strong>
+          <h4>Free <span>Guy</span></h4>
+          <div class="badge-genre">
+            <div class="badge">
+              <span>PG 13</span>
+              <span>HD</span>
             </div>
-            <div class="date-time">
-                <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
-                <span><i class="fa-regular fa-clock"></i> 115 min</span>
+            <div class="genre">
+              <a href="#">Comedy</a>,
+              <a href="#">Action</a>,
+              <a href="#">Adventure</a>,
+              <a href="#">Science Fiction</a>
             </div>
-            <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
-            <div class="detail-actions">
-                <button>
-                    <i class="bi bi-share-fill"></i>
-                    <span>Share</span>
-                </button>
-                <div class="prime">
-                    <h5>Prime Video</h5>
-                    <small>Streaming Channels</small>
-                </div>
-                <div class="btn">
-                    <button onclick="window.location.href='video_modal.html';">
-                        <i class="fa-solid fa-play"></i> Watch Now
-                    </button>
-                </div>
+          </div>
+          <div class="date-time">
+            <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
+            <span><i class="fa-regular fa-clock"></i> 115 min</span>
+          </div>
+          <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
+          <div class="detail-actions">
+            <button>
+              <i class="bi bi-share-fill"></i>
+              <span>Share</span>
+            </button>
+            <div class="prime">
+              <h5>Prime Video</h5>
+              <small>Streaming Channels</small>
             </div>
+            <div class="btn">
+              <button id="watchNowBtn">
+                <i class="fa-solid fa-play"></i> Watch Now
+              </button>
+              <!-- New Scroll Button -->
+              <button id="scrollBtn" style="margin-top: 10px;">
+                <i class="fa-solid fa-arrow-down"></i> Scroll 100px
+              </button>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="download-btn">
+      </div>
+      <div class="download-btn">
         <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
-    </div>
-</section>
-
-<!-- other content -->
+      </div>
+    </section>
 
     <!-- footer section start -->
     <footer>
@@ -171,6 +166,17 @@
             video.currentTime = 0;
           });
         });
+
+      // Scroll Button
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollBtn = document.getElementById('scrollBtn');
+        scrollBtn.addEventListener('click', () => {
+          window.scrollBy({
+            top: 100,
+            behavior: 'smooth'
+          });
+        });
+      });
     </script>
   </body>
 </html>
