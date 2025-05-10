@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "The Northman",
+    "image": "images/upcoming-1.png",
+    "year": 2022,
+    "duration": "137 min",
+    "rating": "PG 18",
+    "quality": "HD",
+    "genres": ["Action", "Adventure", "Drama"],
+    "description": "A Viking prince sets out on a quest to avenge his father's murder.",
+    "videoUrl": "https://example.com/video1"
+  },
+  {
+    "id": 2,
+    "title": "Doctor Strange",
+    "image": "images/upcoming-2.png",
+    "year": 2022,
+    "duration": "126 min",
+    "rating": "PG 13",
+    "quality": "4K",
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "description": "Doctor Strange teams up with a mysterious teenage girl to fight against a powerful new threat.",
+    "videoUrl": "https://example.com/video2"
+  },
+  {
+    "id": 3,
+    "title": "Free Guy",
+    "image": "images/movie-4.png",
+    "year": 2021,
+    "duration": "115 min",
+    "rating": "PG 13",
+    "quality": "HD",
+    "genres": ["Comedy", "Action", "Adventure"],
+    "description": "A bank teller discovers he's actually an NPC inside a brutal video game.",
+    "videoUrl": "https://example.com/video3"
+  }
+  // Add more movies as needed
+]
