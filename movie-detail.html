@@ -78,10 +78,14 @@
                 </div>
                 <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
                 <div class="detail-actions">
-                    <!-- Removing the redirect and adding a click event for scrolling -->
+                    <!-- Keep the original button design and functionality, just remove the link part -->
                     <button id="watchNowBtn">
                         <i class="fa-solid fa-play"></i> Watch Now
                     </button>
+                    <div class="prime">
+                        <h5>Prime Video</h5>
+                        <small>Streaming Channels</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,7 +148,7 @@
 
       if (watchNowBtn) {
         watchNowBtn.addEventListener("click", function (e) {
-          e.preventDefault();  // Prevent any default behavior
+          e.preventDefault();  // Prevent any default behavior (like page redirection)
           
           // Scroll the page by 50px down smoothly
           window.scrollBy({
