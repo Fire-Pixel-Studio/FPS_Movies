@@ -50,56 +50,49 @@
       </nav>
     </header>
 
-<!-- movie-detail section start -->
-<section class="movie-detail">
-    <div class="main">
-        <div class="img">
-            <a href="#"><img src="images/movie-4.png" alt=""></a>
-            <i class="fa-regular fa-circle-play"></i>
-        </div>
-        <div class="content">
-            <strong>New Episodes</strong>
-            <h4>Free <span>Guy</span></h4>
-            <div class="badge-genre">
-                <div class="badge">
-                    <span>PG 13</span>
-                    <span>HD</span>
-                </div>
-                <div class="genre">
-                    <a href="#">Comedy</a>,
-                    <a href="#">Action</a>,
-                    <a href="#">Adventure</a>,
-                    <a href="#">Science Fiction</a>
-                </div>
+    <!-- movie-detail section start -->
+    <section class="movie-detail">
+        <div class="main">
+            <div class="img">
+                <a href="#"><img src="images/movie-4.png" alt=""></a>
+                <i class="fa-regular fa-circle-play"></i>
             </div>
-            <div class="date-time">
-                <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
-                <span><i class="fa-regular fa-clock"></i> 115 min</span>
-            </div>
-            <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
-            <div class="detail-actions">
-                <button>
-                    <i class="bi bi-share-fill"></i>
-                    <span>Share</span>
-                </button>
-                <div class="prime">
-                    <h5>Prime Video</h5>
-                    <small>Streaming Channels</small>
+            <div class="content">
+                <strong>New Episodes</strong>
+                <h4>Free <span>Guy</span></h4>
+                <div class="badge-genre">
+                    <div class="badge">
+                        <span>PG 13</span>
+                        <span>HD</span>
+                    </div>
+                    <div class="genre">
+                        <a href="#">Comedy</a>,
+                        <a href="#">Action</a>,
+                        <a href="#">Adventure</a>,
+                        <a href="#">Science Fiction</a>
+                    </div>
                 </div>
-                <div class="btn">
-                    <button onclick="window.location.href='video_modal.html';">
+                <div class="date-time">
+                    <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
+                    <span><i class="fa-regular fa-clock"></i> 115 min</span>
+                </div>
+                <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
+                <div class="detail-actions">
+                    <!-- Keep the original button design and functionality, just remove the link part -->
+                    <button id="watchNowBtn">
                         <i class="fa-solid fa-play"></i> Watch Now
                     </button>
+                    <div class="prime">
+                        <h5>Prime Video</h5>
+                        <small>Streaming Channels</small>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="download-btn">
-        <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
-    </div>
-</section>
-
-<!-- other content -->
+        <div class="download-btn">
+            <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
+        </div>
+    </section>
 
     <!-- footer section start -->
     <footer>
@@ -148,7 +141,7 @@
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
 
-    <!-- Load and bind modal -->
+        <!-- Load and bind modal -->
     <script>
       fetch('video_modal.html')
         .then(res => res.text())
@@ -171,6 +164,25 @@
             video.currentTime = 0;
           });
         });
+    </script>
+
+    <!-- Custom JavaScript for scrolling -->
+    <script>
+      // JavaScript for Scroll Functionality
+      const watchNowBtn = document.getElementById("watchNowBtn");
+
+      if (watchNowBtn) {
+        watchNowBtn.addEventListener("click", function (e) {
+          e.preventDefault();  // Prevent any default behavior (like page redirection)
+          
+          // Scroll the page by 50px down smoothly
+          window.scrollBy({
+            top: 50,  // Scroll 50px down
+            left: 0,
+            behavior: "smooth"  // Smooth scroll effect
+          });
+        });
+      }
     </script>
   </body>
 </html>
