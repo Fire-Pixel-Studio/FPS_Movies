@@ -50,49 +50,56 @@
       </nav>
     </header>
 
-    <!-- movie-detail section start -->
-    <section class="movie-detail">
-        <div class="main">
-            <div class="img">
-                <a href="#"><img src="images/movie-4.png" alt=""></a>
-                <i class="fa-regular fa-circle-play"></i>
+<!-- movie-detail section start -->
+<section class="movie-detail">
+    <div class="main">
+        <div class="img">
+            <a href="#"><img src="images/movie-4.png" alt=""></a>
+            <i class="fa-regular fa-circle-play"></i>
+        </div>
+        <div class="content">
+            <strong>New Episodes</strong>
+            <h4>Free <span>Guy</span></h4>
+            <div class="badge-genre">
+                <div class="badge">
+                    <span>PG 13</span>
+                    <span>HD</span>
+                </div>
+                <div class="genre">
+                    <a href="#">Comedy</a>,
+                    <a href="#">Action</a>,
+                    <a href="#">Adventure</a>,
+                    <a href="#">Science Fiction</a>
+                </div>
             </div>
-            <div class="content">
-                <strong>New Episodes</strong>
-                <h4>Free <span>Guy</span></h4>
-                <div class="badge-genre">
-                    <div class="badge">
-                        <span>PG 13</span>
-                        <span>HD</span>
-                    </div>
-                    <div class="genre">
-                        <a href="#">Comedy</a>,
-                        <a href="#">Action</a>,
-                        <a href="#">Adventure</a>,
-                        <a href="#">Science Fiction</a>
-                    </div>
+            <div class="date-time">
+                <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
+                <span><i class="fa-regular fa-clock"></i> 115 min</span>
+            </div>
+            <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
+            <div class="detail-actions">
+                <button>
+                    <i class="bi bi-share-fill"></i>
+                    <span>Share</span>
+                </button>
+                <div class="prime">
+                    <h5>Prime Video</h5>
+                    <small>Streaming Channels</small>
                 </div>
-                <div class="date-time">
-                    <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
-                    <span><i class="fa-regular fa-clock"></i> 115 min</span>
-                </div>
-                <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
-                <div class="detail-actions">
-                    <!-- Keep the original button design and functionality, just remove the link part -->
-                    <button id="watchNowBttn">
+                <div class="btn">
+                    <button onclick="window.location.href='video_modal.html';">
                         <i class="fa-solid fa-play"></i> Watch Now
                     </button>
-                    <div class="prime">
-                        <h5>Prime Video</h5>
-                        <small>Streaming Channels</small>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="download-btn">
-            <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
-        </div>
-    </section>
+    </div>
+    <div class="download-btn">
+        <a href="images/movie-4.png" download>download <i class="fa-solid fa-download"></i></a>
+    </div>
+</section>
+
+<!-- other content -->
 
     <!-- footer section start -->
     <footer>
@@ -141,24 +148,29 @@
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
 
-
-    <!-- Custom JavaScript for scrolling -->
+    <!-- Load and bind modal -->
     <script>
-      // JavaScript for Scroll Functionality
-      const watchNowBttn = document.getElementById("watchNowBttn");
+      fetch('video_modal.html')
+        .then(res => res.text())
+        .then(html => {
+          document.body.insertAdjacentHTML('beforeend', html);
 
-      if (watchNowBttn) {
-        watchNowBttn.addEventListener("click", function (e) {
-          e.preventDefault();  // Prevent any default behavior (like page redirection)
-          
-          // Scroll the page by 50px down smoothly
-          window.scrollBy({
-            top: 50,  // Scroll 50px down
-            left: 0,
-            behavior: "smooth"  // Smooth scroll effect
+          const watchNowBtn = document.getElementById('watchNowBtn');
+          const modal = document.getElementById('videoModal');
+          const closeBtn = document.getElementById('modalClose');
+          const video = document.getElementById('modalVideo');
+
+          watchNowBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            video.play();
+          });
+
+          closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
           });
         });
-      }
     </script>
   </body>
 </html>
