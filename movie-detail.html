@@ -78,20 +78,9 @@
             </div>
             <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
             <div class="detail-actions">
-                <button>
-                    <i class="bi bi-share-fill"></i>
-                    <span>Share</span>
+                <button id="watchNowBtn">
+                    <i class="fa-solid fa-play"></i> Watch Now
                 </button>
-                <div class="prime">
-                    <h5>Prime Video</h5>
-                    <small>Streaming Channels</small>
-                </div>
-                <!-- Removed link to another page; changed to scroll down -->
-                <div class="btn">
-                    <button id="watchNowBtn">
-                        <i class="fa-solid fa-play"></i> Watch Now
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -100,71 +89,68 @@
     </div>
 </section>
 
-<!-- other content -->
-
-    <!-- footer section start -->
-    <footer>
-      <div class="main">
-        <div class="footer-top">
-          <nav>
-            <div class="logo">
-              <img src="images/logo.svg" alt="" />
-            </div>
-            <ul class="list">
-              <li><a href="">home</a></li>
-              <li><a href="">movie</a></li>
-              <li><a href="">tv show</a></li>
-              <li><a href="">web series</a></li>
-              <li><a href="">pricing</a></li>
-            </ul>
-          </nav>
-          <hr />
-          <div class="links">
-            <div class="text-links">
-              <a href="">faq</a>
-              <a href="">help center</a>
-              <a href="">terms of use</a>
-              <a href="">privacy</a>
-            </div>
-            <div class="social-links">
-              <a href=""><i class="fa-brands fa-facebook"></i></a>
-              <a href=""><i class="fa-brands fa-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-pinterest"></i></a>
-              <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-          </div>
+<!-- footer section start -->
+<footer>
+  <div class="main">
+    <div class="footer-top">
+      <nav>
+        <div class="logo">
+          <img src="images/logo.svg" alt="" />
         </div>
-        <div class="footer-bottom">
-          <div class="copyright">
-            <p>&#169; 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
-          </div>
-          <div class="img">
-            <img src="images/footer-bottom-img.png" alt="" />
-          </div>
+        <ul class="list">
+          <li><a href="">home</a></li>
+          <li><a href="">movie</a></li>
+          <li><a href="">tv show</a></li>
+          <li><a href="">web series</a></li>
+          <li><a href="">pricing</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <div class="links">
+        <div class="text-links">
+          <a href="">faq</a>
+          <a href="">help center</a>
+          <a href="">terms of use</a>
+          <a href="">privacy</a>
+        </div>
+        <div class="social-links">
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-pinterest"></i></a>
+          <a href=""><i class="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>&#169; 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
+      </div>
+      <div class="img">
+        <img src="images/footer-bottom-img.png" alt="" />
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <!-- Load core JS -->
-    <script src="js/script.js"></script>
-    <script src="js/navbar.js"></script>
+<!-- Load core JS -->
+<script src="js/script.js"></script>
+<script src="js/navbar.js"></script>
 
-    <!-- Scroll down on "Watch Now" button click -->
-    <script>
-      // Scroll 50px down on Watch Now click
-      document.addEventListener("DOMContentLoaded", () => {
-        const scrollBtn = document.getElementById("watchNowBtn");
-        if (scrollBtn) {
-          scrollBtn.addEventListener("click", () => {
-            window.scrollBy({
-              top: 50,
-              left: 0,
-              behavior: "smooth"
-            });
-          });
-        }
+<!-- Custom JavaScript for scrolling -->
+<script>
+  // JavaScript for Scroll Functionality
+  const watchNowBtn = document.getElementById("watchNowBtn");
+  if (watchNowBtn) {
+    watchNowBtn.addEventListener("click", (e) => {
+      e.preventDefault();  // Prevent the default action (page redirect)
+      window.scrollBy({
+        top: 50,  // Scroll 50px down
+        left: 0,
+        behavior: "smooth"  // Smooth scroll
       });
-    </script>
-  </body>
-</html>
+    });
+  }
+</script>
 
+</body>
+</html>
