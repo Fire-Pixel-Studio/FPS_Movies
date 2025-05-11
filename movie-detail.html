@@ -69,7 +69,7 @@
         max-height: 90%;
         background: #111;
         border-radius: 12px;
-        overflow: hidden;
+        overflow: auto;
       }
 
       .modal-close {
@@ -145,6 +145,14 @@
               <button id="scrollBtn">
                 <i class="fa-solid fa-play"></i> Watch Now
               </button>
+            </div>
+            <button>
+              <i class="bi bi-share-fill"></i>
+              <span>Share</span>
+            </button>
+            <div class="prime">
+              <h5>Prime Video</h5>
+              <small>Streaming Channels</small>
             </div>
           </div>
         </div>
@@ -228,9 +236,27 @@
               const modalContent = document.querySelector('#videoModal .modal-content');
               modalContent.innerHTML = `<button id="modalClose" class="modal-close">Close</button>${html}`;
 
+              // Update video-page.html content dynamically
               const videoIframe = modalContent.querySelector('.responsive-video-wrapper iframe');
-              if (movie && videoIframe) {
-                videoIframe.src = movie.videoUrl;
+              const modalTitle = modalContent.querySelector('.content h4');
+              const modalNewEpisodes = modalContent.querySelector('.content strong');
+              const modalRating = modalContent.querySelector('.badge #rating');
+              const modalQuality = modalContent.querySelector('.badge #quality');
+              const modalGenres = modalContent.querySelector('.content .genre');
+              const modalYear = modalContent.querySelector('.content .date-time span:nth-child(1)');
+              const modalDuration = modalContent.querySelector('.content .date-time span:nth-child(2)');
+              const modalDescription = modalContent.querySelector('.content p');
+
+              if (movie) {
+                if (videoIframe) videoIframe.src = movie.videoUrl;
+                if (modalTitle) modalTitle.innerHTML = movie.title;
+                if (modalNewEpisodes) modalNewEpisodes.textContent = movie.newEpisodes ? 'New Episodes' : '';
+                if (modalRating) modalRating.textContent = movie.rating;
+                if (modalQuality) modalQuality.textContent = movie.quality;
+                if (modalGenres) modalGenres.innerHTML = movie.genres.map(genre => `<a href="#">${genre}</a>`).join(', ');
+                if (modalYear) modalYear.innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${movie.year}`;
+                if (modalDuration) modalDuration.innerHTML = `<i class="fa-regular fa-clock"></i> ${movie.duration}`;
+                if (modalDescription) modalDescription.textContent = movie.description;
               }
 
               const watchNowBtn = document.getElementById('scrollBtn');
@@ -240,7 +266,6 @@
               if (watchNowBtn) {
                 watchNowBtn.addEventListener('click', () => {
                   modal.style.display = 'flex';
-                  // No need to call play() for iframe; Google Drive handles playback
                 });
               }
 
