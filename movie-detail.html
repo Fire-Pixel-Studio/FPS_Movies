@@ -114,22 +114,17 @@
         background-color: #2980b9;
       }
 
-      /* Footer styles to make it full-width */
-      footer {
-        width: 100%;
-        background-color: #111;
-      }
-
+      /* Footer styles to stretch existing footers to full-width */
       footer .main {
-        max-width: 100%;
         width: 100%;
+        max-width: 100%; /* Override any max-width constraints */
+        margin: 0;
         padding: 0;
-        margin: 0 auto;
       }
 
       footer .footer-top,
       footer .footer-bottom {
-        max-width: 1280px;
+        max-width: 1280px; /* Match content width of other sections */
         margin: 0 auto;
         padding: 20px 15px;
       }
@@ -147,6 +142,11 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+      }
+
+      /* Ensure no extra black space is added */
+      footer {
+        background-color: transparent; /* Avoid adding a black background */
       }
 
       /* Responsive footer adjustments */
@@ -219,7 +219,6 @@
             <span id="movie-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
           </div>
           <p id="movie-description"></p>
-          < scriv id="movie-description"></p>
           <div class="detail-actions">
             <div class="btn">
               <button id="scrollBtn">
@@ -238,7 +237,7 @@
         </div>
       </div>
 
-      <!-- Footer (Restored from Original movie-detail.html) -->
+      <!-- Simplified Footer (Stretch this to full-width) -->
       <footer>
         <div class="main">
           <div class="footer-bottom">
@@ -381,7 +380,137 @@
       </div>
     </section>
 
-    <!-- Full Footer (from video-page.html) -->
+    <!-- Full Footer (Stretch this to full-width) -->
+    <footer>
+      <div class="main">
+        <div class="footer-top">
+          <nav>
+            <div class="logo">
+              <img src="images/logo.svg" alt="">
+            </div>
+            <ul class="list">
+              <li><a href="">home</a></li>
+              <li><a href="">movie</a></li>
+              <li><a href="">tv show</a></li>
+              <li><a href="">web series</a></li>
+              <li><a href="">pricing</a></li>
+            </ul>
+          </nav>
+          <hr>
+          <div class="links">
+            <div class="text-links">
+              <a href="">faq</a>
+              <a href="">help center</a>
+              <a href="">terms of use</a>
+              <a href="">privacy</a>
+            </div>
+            <div class="social-links">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-pinterest"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
+          </div>
+          <div class="img">
+            <img src="images/footer-bottom-img.png" alt="">
+          </div>
+        </div>
+      </div>
+    </footer SNP id="movie-description"></p>
+      </div>
+    </section>
+
+    <!-- Upcoming Movies Section -->
+    <section class="upcoming-movie">
+      <div class="header">
+        <div class="subtitle">
+          <small>Online Streaming</small>
+          <h4>Upcoming Movies</h4>
+        </div>
+        <div class="buttons">
+          <button>Movies</button>
+          <button>TV Shows</button>
+          <button>Anime</button>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="wrapper">
+          <ul class="movie-carousel">
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=2"><img src="images/upcoming-1.png" alt="The Northman" /></a>
+              </div>
+              <div class="title">
+                <a href="movie-detail.html?id=2"><h4>The Northman</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>HD</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> 137 min</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=3"><img src="images/upcoming-2.png" alt="Doctor Strange" /></a>
+              </div>
+              <div class="title">
+                <a href="movie-detail.html?id=3"><h4>Doctor Strange</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>4K</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> 126 min</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=4"><img src="images/upcoming-3.png" alt="Memory" /></a>
+              </div>
+              <div class="title">
+                <a href="movie-detail.html?id=4"><h4>Memory</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>2K</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> N/A</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=5"><img src="images/upcoming-4.png" alt="Unbearable Weight" /></a>
+              </div>
+              <div class="title">
+                <a href="movie-detail.html?id=5"><h4>Unbearable Weight</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>HD</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> 107 min</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Footer (Stretch this to full-width) -->
     <footer>
       <div class="main">
         <div class="footer-top">
