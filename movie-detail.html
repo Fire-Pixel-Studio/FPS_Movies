@@ -113,6 +113,60 @@
       #scrollBtn:hover {
         background-color: #2980b9;
       }
+
+      /* Footer styles to make it full-width */
+      footer {
+        width: 100%;
+        background-color: #111;
+      }
+
+      footer .main {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      footer .footer-top,
+      footer .footer-bottom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 15px;
+      }
+
+      footer .footer-top nav,
+      footer .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      /* Responsive footer adjustments */
+      @media (max-width: 768px) {
+        footer .footer-top,
+        footer .footer-bottom {
+          padding: 15px 10px;
+        }
+
+        footer .footer-top nav,
+        footer .links {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        footer .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
     </style>
   </head>
 
@@ -165,6 +219,7 @@
             <span id="movie-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
           </div>
           <p id="movie-description"></p>
+          < scriv id="movie-description"></p>
           <div class="detail-actions">
             <div class="btn">
               <button id="scrollBtn">
@@ -327,47 +382,47 @@
     </section>
 
     <!-- Full Footer (from video-page.html) -->
- <footer>
-    <div class="main">
-      <div class="footer-top">
-        <nav>
-          <div class="logo">
-            <img src="images/logo.svg" alt="">
+    <footer>
+      <div class="main">
+        <div class="footer-top">
+          <nav>
+            <div class="logo">
+              <img src="images/logo.svg" alt="">
+            </div>
+            <ul class="list">
+              <li><a href="">home</a></li>
+              <li><a href="">movie</a></li>
+              <li><a href="">tv show</a></li>
+              <li><a href="">web series</a></li>
+              <li><a href="">pricing</a></li>
+            </ul>
+          </nav>
+          <hr>
+          <div class="links">
+            <div class="text-links">
+              <a href="">faq</a>
+              <a href="">help center</a>
+              <a href="">terms of use</a>
+              <a href="">privacy</a>
+            </div>
+            <div class="social-links">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-pinterest"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
-          <ul class="list">
-            <li><a href="">home</a></li>
-            <li><a href="">movie</a></li>
-            <li><a href="">tv show</a></li>
-            <li><a href="">web series</a></li>
-            <li><a href="">pricing</a></li>
-          </ul>
-        </nav>
-        <hr>
-        <div class="links">
-          <div class="text-links">
-            <a href="">faq</a>
-            <a href="">help center</a>
-            <a href="">terms of use</a>
-            <a href="">privacy</a>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
           </div>
-          <div class="social-links">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-pinterest"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          <div class="img">
+            <img src="images/footer-bottom-img.png" alt="">
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="copyright">
-          <p>© 2025 <a href="">FirePixelStudio</a>. All Rights Reserved</p>
-        </div>
-        <div class="img">
-          <img src="images/footer-bottom-img.png" alt="">
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
 
