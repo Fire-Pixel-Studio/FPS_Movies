@@ -113,62 +113,6 @@
       #scrollBtn:hover {
         background-color: #2980b9;
       }
-
-      /* Footer styles to stretch existing footers to full-width */
-      footer {
-        background-color: transparent; /* Prevent unwanted background */
-        width: 100%;
-      }
-
-      footer .main {
-        width: 100%;
-        max-width: none !important; /* Override any max-width constraints */
-        margin: 0;
-        padding: 0;
-      }
-
-      footer .footer-top,
-      footer .footer-bottom {
-        max-width: 1280px; /* Center content like other sections */
-        margin: 0 auto;
-        padding: 20px 15px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      footer .footer-top nav,
-      footer .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      footer .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      /* Responsive footer adjustments */
-      @media (max-width: 768px) {
-        footer .footer-top,
-        footer .footer-bottom {
-          padding: 15px 10px;
-        }
-
-        footer .footer-top nav,
-        footer .links {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        footer .footer-bottom {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
     </style>
   </head>
 
@@ -239,6 +183,22 @@
         </div>
       </div>
 
+      <!-- Simplified Footer (Modified to stretch full-width) -->
+      <footer>
+        <div style="width: 100%;">
+          <div style="max-width: 1280px; margin: 0 auto; padding: 20px 15px;">
+            <div class="footer-bottom">
+              <div class="copyright">
+                <p>© 2025 <a href="">FirePixelStudio</a>. All Rights Reserved</p>
+              </div>
+              <div class="img">
+                <img src="images/footer-bottom-img.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       <!-- Video Player and Details Section -->
       <div class="main video-section">
         <div class="responsive-video-wrapper">
@@ -281,20 +241,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Simplified Footer (Stretch to full-width) -->
-      <footer>
-        <div class="main">
-          <div class="footer-bottom">
-            <div class="copyright">
-              <p>© 2025 <a href="">FirePixelStudio</a>. All Rights Reserved</p>
-            </div>
-            <div class="img">
-              <img src="images/footer-bottom-img.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </footer>
     </section>
 
     <!-- Upcoming Movies Section -->
@@ -382,44 +328,46 @@
       </div>
     </section>
 
-    <!-- Full Footer (Stretch to full-width) -->
+    <!-- Full Footer (Modified to stretch full-width) -->
     <footer>
-      <div class="main">
-        <div class="footer-top">
-          <nav>
-            <div class="logo">
-              <img src="images/logo.svg" alt="">
-            </div>
-            <ul class="list">
-              <li><a href="">home</a></li>
-              <li><a href="">movie</a></li>
-              <li><a href="">tv show</a></li>
-              <li><a href="">web series</a></li>
-              <li><a href="">pricing</a></li>
-            </ul>
-          </nav>
-          <hr>
-          <div class="links">
-            <div class="text-links">
-              <a href="">faq</a>
-              <a href="">help center</a>
-              <a href="">terms of use</a>
-              <a href="">privacy</a>
-            </div>
-            <div class="social-links">
-              <a href=""><i class="fa-brands fa-facebook"></i></a>
-              <a href=""><i class="fa-brands fa-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-pinterest"></i></a>
-              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+      <div style="width: 100%;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 20px 15px;">
+          <div class="footer-top">
+            <nav>
+              <div class="logo">
+                <img src="images/logo.svg" alt="">
+              </div>
+              <ul class="list">
+                <li><a href="">home</a></li>
+                <li><a href="">movie</a></li>
+                <li><a href="">tv show</a></li>
+                <li><a href="">web series</a></li>
+                <li><a href="">pricing</a></li>
+              </ul>
+            </nav>
+            <hr>
+            <div class="links">
+              <div class="text-links">
+                <a href="">faq</a>
+                <a href="">help center</a>
+                <a href="">terms of use</a>
+                <a href="">privacy</a>
+              </div>
+              <div class="social-links">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-pinterest"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="copyright">
-            <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
-          </div>
-          <div class="img">
-            <img src="images/footer-bottom-img.png" alt="">
+          <div class="footer-bottom">
+            <div class="copyright">
+              <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
+            </div>
+            <div class="img">
+              <img src="images/footer-bottom-img.png" alt="">
+            </div>
           </div>
         </div>
       </div>
