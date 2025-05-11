@@ -150,16 +150,14 @@
   
     <!-- Button will scroll away with content -->
 
-
-
 <script>
   const button = document.getElementById('scrollBtn');
-  const target = document.getElementById('targetSection');
 
   button.addEventListener('click', () => {
-    target.scrollIntoView({ behavior: 'smooth' });
+    window.scrollBy({ top: 500, behavior: 'smooth' }); // Change 500 to any pixel value you want
   });
 </script>
+
 
 
     <script>
