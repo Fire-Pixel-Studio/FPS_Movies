@@ -150,11 +150,15 @@
   
     <!-- Button will scroll away with content -->
 
+<!-- Hidden scroll target (invisible and positioned a bit lower) -->
+<div id="targetSection" style="position: relative; top: 200px; height: 1px; overflow: hidden;"></div>
+
 <script>
   const button = document.getElementById('scrollBtn');
+  const target = document.getElementById('targetSection');
 
   button.addEventListener('click', () => {
-    window.scrollBy({ top: 500, behavior: 'smooth' }); // Change 500 to any pixel value you want
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 </script>
 
