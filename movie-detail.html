@@ -49,6 +49,45 @@
       #videoModalSection {
         margin-top: 100px;
       }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        background: #111;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #333;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .modal-close:hover {
+        background: #555;
+      }
     </style>
   </head>
 
@@ -82,30 +121,25 @@
     <section class="movie-detail">
       <div class="main">
         <div class="img">
-          <a href="#"><img src="images/movie-4.png" alt=""></a>
+          <a href="#"><img id="movie-poster" src="" alt="Movie Poster"></a>
         </div>
         <div class="content">
-          <strong>New Episodes</strong>
-          <h4>Free <span>Guy</span></h4>
+          <strong id="new-episodes">New Episodes</strong>
+          <h4 id="movie-title">Loading...</h4>
           <div class="badge-genre">
-            <div class="badge">
-              <span>PG 13</span>
-              <span>HD</span>
+            <div class="badge" id="movie-badge">
+              <span id="rating">PG 13</span>
+              <span id="quality">HD</span>
             </div>
-            <div class="genre">
-              <a href="#">Comedy</a>,
-              <a href="#">Action</a>,
-              <a href="#">Adventure</a>,
-              <a href="#">Science Fiction</a>
+            <div class="genre" id="movie-genre">
+              <!-- Genres will be inserted here dynamically -->
             </div>
           </div>
           <div class="date-time">
-            <span><i class="fa-solid fa-calendar-days"></i> 2021</span>
-            <span><i class="fa-regular fa-clock"></i> 115 min</span>
+            <span id="movie-year"><i class="fa-solid fa-calendar-days"></i> Loading...</span>
+            <span id="movie-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
           </div>
-          <p>
-            A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.
-          </p>
+          <p id="movie-description"></p>
           <div class="detail-actions">
             <div class="btn">
               <button id="scrollBtn">
@@ -117,9 +151,14 @@
       </div>
     </section>
 
-    <!-- Your modal will scroll to here -->
+    <!-- Video Modal Section -->
     <section id="videoModalSection">
-      <!-- video_modal.html content will be inserted here -->
+      <div id="videoModal" class="modal">
+        <div class="modal-content">
+          <button id="modalClose" class="modal-close">Close</button>
+          <!-- video-page.html content will be inserted here -->
+        </div>
+      </div>
     </section>
 
     <!-- footer section start -->
@@ -127,7 +166,7 @@
       <div class="main">
         <div class="footer-bottom">
           <div class="copyright">
-            <p>&#169; 2025 <a href="">NotAKiB</a>. All Rights Reserved</p>
+            <p>© 2025 <a href="">NotAKiB</a>. All Rights Reserved</p>
           </div>
           <div class="img">
             <img src="images/footer-bottom-img.png" alt="" />
@@ -140,42 +179,97 @@
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
 
-    <!-- Smooth scroll to video modal -->
+    <!-- Load video modal content and dynamic movie data -->
     <script>
-      const button = document.getElementById('scrollBtn');
-      const target = document.getElementById('videoModalSection');
+      // Get movie ID from URL (e.g., /movie-detail.html?id=1)
+      const urlParams = new URLSearchParams(window.location.search);
+      const movieId = urlParams.get('id') || '1'; // Default to first movie if no ID
 
-      button.addEventListener('click', () => {
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
-    </script>
+      // Fetch movie data from movies.json
+      fetch('movies.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to load movies.json');
+          return res.json();
+        })
+        .then(movies => {
+          // Find the movie by ID
+          const movie = movies.find(m => m.id === movieId);
 
-    <!-- Load video modal content -->
-    <script>
-      fetch('video-page.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('videoModalSection').innerHTML = html;
-
-          const watchNowBtn = document.getElementById('watchNowBtn');
-          const modal = document.getElementById('videoModal');
-          const closeBtn = document.getElementById('modalClose');
-          const video = document.getElementById('modalVideo');
-
-          if (watchNowBtn) {
-            watchNowBtn.addEventListener('click', () => {
-              modal.style.display = 'flex';
-              video.play();
-            });
+          // Update page content dynamically
+          if (movie) {
+            document.getElementById('movie-title').innerHTML = movie.title;
+            document.getElementById('movie-poster').src = movie.poster;
+            document.getElementById('movie-poster').alt = `${movie.title} Poster`;
+            document.getElementById('movie-description').textContent = movie.description;
+            document.getElementById('movie-year').innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${movie.year}`;
+            document.getElementById('movie-duration').innerHTML = `<i class="fa-regular fa-clock"></i> ${movie.duration}`;
+            document.getElementById('rating').textContent = movie.rating;
+            document.getElementById('quality').textContent = movie.quality;
+            document.getElementById('new-episodes').textContent = movie.newEpisodes ? 'New Episodes' : '';
+            // Update genres dynamically
+            const genreContainer = document.getElementById('movie-genre');
+            genreContainer.innerHTML = movie.genres.map(genre => `<a href="#">${genre}</a>`).join(', ');
+          } else {
+            document.getElementById('movie-title').innerHTML = 'Movie Not Found';
+            document.getElementById('movie-description').textContent = 'Sorry, the movie you are looking for does not exist.';
+            document.getElementById('movie-poster').style.display = 'none';
+            document.getElementById('scrollBtn').style.display = 'none';
+            document.getElementById('movie-badge').style.display = 'none';
+            document.getElementById('movie-genre').style.display = 'none';
+            document.getElementById('movie-year').style.display = 'none';
+            document.getElementById('movie-duration').style.display = 'none';
+            document.getElementById('new-episodes').style.display = 'none';
           }
 
-          if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-              modal.style.display = 'none';
-              video.pause();
-              video.currentTime = 0;
+          // Load video modal content
+          fetch('video-page.html')
+            .then(res => res.text())
+            .then(html => {
+              const modalContent = document.querySelector('#videoModal .modal-content');
+              modalContent.innerHTML = `<button id="modalClose" class="modal-close">Close</button>${html}`;
+
+              const videoIframe = modalContent.querySelector('.responsive-video-wrapper iframe');
+              if (movie && videoIframe) {
+                videoIframe.src = movie.videoUrl;
+              }
+
+              const watchNowBtn = document.getElementById('scrollBtn');
+              const modal = document.getElementById('videoModal');
+              const closeBtn = document.getElementById('modalClose');
+
+              if (watchNowBtn) {
+                watchNowBtn.addEventListener('click', () => {
+                  modal.style.display = 'flex';
+                  // No need to call play() for iframe; Google Drive handles playback
+                });
+              }
+
+              if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                  modal.style.display = 'none';
+                  if (videoIframe) {
+                    // Reset iframe to stop playback
+                    videoIframe.src = videoIframe.src;
+                  }
+                });
+              }
+            })
+            .catch(error => {
+              console.error('Error loading video modal:', error);
+              document.getElementById('videoModalSection').innerHTML = '<p>Error loading video player.</p>';
             });
-          }
+        })
+        .catch(error => {
+          console.error('Error loading movie data:', error);
+          document.getElementById('movie-title').innerHTML = 'Error';
+          document.getElementById('movie-description').textContent = 'Failed to load movie details.';
+          document.getElementById('movie-poster').style.display = 'none';
+          document.getElementById('scrollBtn').style.display = 'none';
+          document.getElementById('movie-badge').style.display = 'none';
+          document.getElementById('movie-genre').style.display = 'none';
+          document.getElementById('movie-year').style.display = 'none';
+          document.getElementById('movie-duration').style.display = 'none';
+          document.getElementById('new-episodes').style.display = 'none';
         });
     </script>
   </body>
