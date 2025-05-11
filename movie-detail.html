@@ -24,6 +24,41 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
   </head>
+
+
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    #scrollBtn {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: static; /* Button will scroll with the page */
+    }
+
+    .spacer {
+      height: 5000px; /* Space to simulate scroll */
+    }
+
+    #targetSection {
+      padding: 50px;
+      background-color: #f1f1f1;
+      text-align: center;
+      font-size: 24px;
+    }
+  </style>
+
+
+  
   <body>
     <!-- navbar starts -->
     <header>
@@ -77,13 +112,9 @@
             </div>
             <p>A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
             <div class="detail-actions">
-                <div class="prime">
-                    <h5>Scroll Down </h5>
-                    <small>To Start Watching</small>
-                </div>
                 <div class="btn">
-                    <button onclick="window.location.href='video_modal.html';">
-                        <i class="fa-solid fa-play"></i> Watch Now
+                        <button id="scrollBtn"><i class="fa-solid fa-play"></i> Watch Now</button>
+                        
                     </button>
                 </div>
             </div>
@@ -116,6 +147,30 @@
     <script src="js/navbar.js"></script>
 
     <!-- Load and bind modal -->
+
+   <!-- Button will scroll away with content -->
+
+
+<div class="spacer"></div>
+
+<div id="targetSection">
+  🎯 This is the section you scroll to!
+</div>
+
+<script>
+  const button = document.getElementById('scrollBtn');
+  const target = document.getElementById('targetSection');
+
+  button.addEventListener('click', () => {
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+
+
+
+
+    
     <script>
       fetch('video_modal.html')
         .then(res => res.text())
