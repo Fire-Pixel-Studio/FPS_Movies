@@ -2,6 +2,7 @@
   {
     "id": "1",
     "title": "Free Guy",
+    "title_2": "Free Guy",
     "description": "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.",
     "poster": "images/movie-4.png",
     "year": 2021,
@@ -17,6 +18,7 @@
   {
     "id": "2",
     "title": "The Northman",
+    "title_2": "Free Guy",
     "description": "A Viking prince seeks revenge for his father's murder.",
     "poster": "images/upcoming-1.png",
     "year": 2022,
@@ -32,6 +34,7 @@
   {
     "id": "3",
     "title": "Doctor Strange",
+    "title_2": "Free Guy",
     "description": "A sorcerer battles mystical threats across the multiverse.",
     "poster": "images/upcoming-2.png",
     "year": 2022,
@@ -47,6 +50,7 @@
   {
     "id": "4",
     "title": "Memory",
+    "title_2": "Free Guy",
     "description": "An assassin confronts his failing memory and moral dilemmas.",
     "poster": "images/upcoming-3.png",
     "year": 2022,
@@ -62,6 +66,7 @@
   {
     "id": "5",
     "title": "Unbearable Weight",
+    "title_2": "Free Guy",
     "description": "A reclusive actor faces personal and professional challenges.",
     "poster": "images/upcoming-4.png",
     "year": 2022,
@@ -77,6 +82,7 @@
   {
     "id": "6",
     "title": "Sonic",
+    "title_2": "Free Guy",
     "description": "A speedy hedgehog teams up to save the world.",
     "poster": "images/movie-1.png",
     "year": 2022,
@@ -92,6 +98,7 @@
   {
     "id": "7",
     "title": "Morbius",
+    "title_2": "Free Guy",
     "description": "A scientist transforms into a vampire-like creature.",
     "poster": "images/movie-2.png",
     "year": 2022,
@@ -107,6 +114,7 @@
   {
     "id": "8",
     "title": "Adam Project",
+    "title_2": "Free Guy",
     "description": "A time-traveling pilot teams up with his younger self.",
     "poster": "images/movie-3.png",
     "year": 2022,
@@ -122,6 +130,7 @@
   {
     "id": "9",
     "title": "Batman",
+    "title_2": "Free Guy",
     "description": "A vigilante battles crime in Gotham City.",
     "poster": "images/movie-5.png",
     "year": 2022,
@@ -137,6 +146,7 @@
   {
     "id": "10",
     "title": "Uncharted",
+    "title_2": "Free Guy",
     "description": "A treasure hunter embarks on a global adventure.",
     "poster": "images/movie-6.png",
     "year": 2022,
@@ -152,6 +162,7 @@
   {
     "id": "11",
     "title": "Death On The Nile",
+    "title_2": "Free Guy",
     "description": "A detective investigates a murder on a luxury cruise.",
     "poster": "images/movie-7.png",
     "year": 2022,
@@ -167,6 +178,7 @@
   {
     "id": "12",
     "title": "Kings Man",
+    "title_2": "Free Guy",
     "description": "A secret agency faces a global threat during World War I.",
     "poster": "images/movie-8.png",
     "year": 2022,
@@ -182,6 +194,7 @@
   {
     "id": "13",
     "title": "Moon Knight",
+    "title_2": "Free Guy",
     "description": "A vigilante with dissociative identity disorder battles supernatural threats.",
     "poster": "images/series-1.png",
     "year": 2022,
@@ -197,6 +210,7 @@
   {
     "id": "14",
     "title": "Halo",
+    "title_2": "Free Guy",
     "description": "A soldier fights in a war against an alien covenant.",
     "poster": "images/series-2.png",
     "year": 2022,
@@ -212,6 +226,7 @@
   {
     "id": "15",
     "title": "Viking Valhalla",
+    "title_2": "Free Guy",
     "description": "Viking explorers navigate a turbulent era of conquest.",
     "poster": "images/series-3.png",
     "year": 2022,
@@ -227,6 +242,7 @@
   {
     "id": "16",
     "title": "Money Heist",
+    "title_2": "Free Guy",
     "description": "A criminal mastermind plans the biggest heist in history.",
     "poster": "images/series-4.png",
     "year": 2017,
