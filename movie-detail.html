@@ -113,6 +113,21 @@
       #scrollBtn:hover {
         background-color: #2980b9;
       }
+
+      /* ---------- full-width divider ---------- */
+      .divider {
+        /* make it stretch edge-to-edge regardless of parent padding */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+
+        width: 100vw;           /* full viewport width  */
+        height: 80px;           /* adjust to the image’s real height */
+        background: url("images/footer-bottom-img.png") center / cover no-repeat;
+      }
+
     </style>
   </head>
 
@@ -184,18 +199,9 @@
       </div>
 
       <!-- Footer (Restored from Original movie-detail.html) -->
-      <footer>
-        <div class="main">
-          <div class="footer-bottom">
-            <div class="copyright">
-              <p>© 2025 <a href="">FirePixelStudio</a>. All Rights Reserved</p>
-            </div>
-            <div class="img">
-              <img src="images/footer-bottom-img.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </footer>
+<!-- Divider – full-width image that acts as a partition -->
+<div class="divider"></div>
+
 
       <!-- Video Player and Details Section -->
       <div class="main video-section">
