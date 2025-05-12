@@ -29,17 +29,27 @@
     />
 
     <style>
-      body {
-        font-family: 'Poppins', sans-serif;
+      /* Global Reset to Prevent External CSS Interference */
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: #111;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #222; /* Match footer background to eliminate "border" effect */
         color: #eee;
       }
 
       .movie-detail {
         padding: 1rem;
+      }
+
+      /* Wrap content to preserve padding but exclude footer */
+      .movie-detail-content {
+        max-width: 1280px;
+        margin: 0 auto;
       }
 
       .responsive-video-wrapper {
@@ -119,7 +129,6 @@
         margin: 0;
         padding: 0;
         border: none !important;
-        box-sizing: border-box;
         background-color: #222;
       }
     </style>
@@ -153,105 +162,105 @@
 
     <!-- Movie Detail Section -->
     <section class="movie-detail">
-      <div class="main">
-        <div class="img">
-          <a href="#"><img id="movie-poster" src="" alt="Movie Poster"></a>
+      <div class="movie-detail-content">
+        <div class="main">
+          <div class="img">
+            <a href="#"><img id="movie-poster" src="" alt="Movie Poster"></a>
+          </div>
+          <div class="content">
+            <strong id="new-episodes">New Episodes</strong>
+            <h4 id="movie-title">Loading...</h4>
+            <div class="badge-genre">
+              <div class="badge" id="movie-badge">
+                <span id="rating">PG 13</span>
+                <span id="quality">HD</span>
+              </div>
+              <div class="genre" id="movie-genre">
+                <!-- Genres will be inserted here dynamically -->
+              </div>
+            </div>
+            <div class="date-time">
+              <span id="movie-year"><i class="fa-solid fa-calendar-days"></i> Loading...</span>
+              <span id="movie-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
+            </div>
+            <p id="movie-description"></p>
+            <div class="detail-actions">
+              <div class="btn">
+                <button id="scrollBtn" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-play"></i> Watch Now
+                </button>
+              </div>
+              <div>
+                <button>
+                  <i class="bi bi-share-fill"></i>
+                  <span>Share</span>
+                </button>
+              </div>
+              <div class="prime">
+                <h5>Prime Video</h5>
+                <small>Streaming Channels</small>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="content">
-          <strong id="new-episodes">New Episodes</strong>
-          <h4 id="movie-title">Loading...</h4>
-          <div class="badge-genre">
-            <div class="badge" id="movie-badge">
-              <span id="rating">PG 13</span>
-              <span id="quality">HD</span>
-            </div>
-            <div class="genre" id="movie-genre">
-              <!-- Genres will be inserted here dynamically -->
-            </div>
+
+        <!-- Video Player and Details Section -->
+        <div class="main video-section">
+          <div class="responsive-video-wrapper">
+            <iframe 
+              src="" 
+              allow="autoplay; encrypted-media" 
+              allowfullscreen>
+            </iframe>
           </div>
-          <div class="date-time">
-            <span id="movie-year"><i class="fa-solid fa-calendar-days"></i> Loading...</span>
-            <span id="movie-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
-          </div>
-          <p id="movie-description"></p>
-          <div class="detail-actions">
-            <div class="btn">
-              <button id="scrollBtn" type="button" class="btn btn-dark">
-                <i class="fa-solid fa-play"></i> Watch Now
-              </button>
+
+          <div class="content">
+            <strong id="video-new-episodes">New Episodes</strong>
+            <h4 id="video-title">Loading...</h4>
+            <div class="badge-genre">
+              <div class="badge">
+                <span id="video-rating">PG 13</span>
+                <span id="video-quality">HD</span>
+              </div>
+              <div class="genre" id="video-genre">
+                <!-- Genres will be inserted here -->
+              </div>
             </div>
-            <div>
+            <div class="date-time">
+              <span id="video-year"><i class="fa-solid fa-calendar-days"></i> Loading...</span>
+              <span id="video-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
+            </div>
+            <p id="video-description">Loading...</p>
+            <div class="detail-actions">
               <button>
                 <i class="bi bi-share-fill"></i>
                 <span>Share</span>
               </button>
+              <div class="prime">
+                <h5>Prime Video</h5>
+                <small>Streaming Channels</small>
+              </div>
             </div>
-            <div class="prime">
-              <h5>Prime Video</h5>
-              <small>Streaming Channels</small>
+            <div class="download-btn">
+              <a href="#">Download Now</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Simplified Footer (Modified to stretch full viewport width and preserve position) -->
-<!-- First Footer -->
-<footer style="width: 100%; margin: 0; padding: 0; background-color: #222; border: none;">
-  <div style="padding: 20px 15px;">
-    <div class="footer-bottom">
-      <div class="copyright">
-        <p>© 2025 <a href="">FirePixelStudio</a>. All Rights Reserved</p>
-      </div>
-      <div class="img">
-        <img src="images/footer-bottom-img.png" alt="" />
-      </div>
-    </div>
-  </div>
-</footer>
-
-      
-      <!-- Video Player and Details Section -->
-      <div class="main video-section">
-        <div class="responsive-video-wrapper">
-          <iframe 
-            src="" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="content">
-          <strong id="video-new-episodes">New Episodes</strong>
-          <h4 id="video-title">Loading...</h4>
-          <div class="badge-genre">
-            <div class="badge">
-              <span id="video-rating">PG 13</span>
-              <span id="video-quality">HD</span>
+      <!-- First Footer -->
+      <footer style="width: 100%; margin: 0; padding: 0; background-color: #222; border: none;">
+        <div style="padding: 20px 15px;">
+          <div class="footer-bottom">
+            <div class="copyright">
+              <p>© 2025 <a href="">FirePixelStudio</a>. All Rights Reserved</p>
             </div>
-            <div class="genre" id="video-genre">
-              <!-- Genres will be inserted here -->
+            <div class="img">
+              <img src="images/footer-bottom-img.png" alt="" />
             </div>
-          </div>
-          <div class="date-time">
-            <span id="video-year"><i class="fa-solid fa-calendar-days"></i> Loading...</span>
-            <span id="video-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
-          </div>
-          <p id="video-description">Loading...</p>
-          <div class="detail-actions">
-            <button>
-              <i class="bi bi-share-fill"></i>
-              <span>Share</span>
-            </button>
-            <div class="prime">
-              <h5>Prime Video</h5>
-              <small>Streaming Channels</small>
-            </div>
-          </div>
-          <div class="download-btn">
-            <a href="#">Download Now</a>
           </div>
         </div>
-      </div>
+      </footer>
     </section>
 
     <!-- Upcoming Movies Section -->
@@ -339,49 +348,48 @@
       </div>
     </section>
 
-    <!-- Full Footer (Modified to stretch full viewport width and preserve position) -->
     <!-- Second Footer -->
-<footer style="width: 100vw; margin: 0; padding: 0; background-color: #222;">
-  <div style="padding: 20px 15px;">
-    <div class="footer-top">
-      <nav>
-        <div class="logo">
-          <img src="images/logo.svg" alt="">
+    <footer style="width: 100%; margin: 0; padding: 0; background-color: #222; border: none;">
+      <div style="padding: 20px 15px;">
+        <div class="footer-top">
+          <nav>
+            <div class="logo">
+              <img src="images/logo.svg" alt="">
+            </div>
+            <ul class="list">
+              <li><a href="">home</a></li>
+              <li><a href="">movie</a></li>
+              <li><a href="">tv show</a></li>
+              <li><a href="">web series</a></li>
+              <li><a href="">pricing</a></li>
+            </ul>
+          </nav>
+          <hr>
+          <div class="links">
+            <div class="text-links">
+              <a href="">faq</a>
+              <a href="">help center</a>
+              <a href="">terms of use</a>
+              <a href="">privacy</a>
+            </div>
+            <div class="social-links">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-pinterest"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
         </div>
-        <ul class="list">
-          <li><a href="">home</a></li>
-          <li><a href="">movie</a></li>
-          <li><a href="">tv show</a></li>
-          <li><a href="">web series</a></li>
-          <li><a href="">pricing</a></li>
-        </ul>
-      </nav>
-      <hr>
-      <div class="links">
-        <div class="text-links">
-          <a href="">faq</a>
-          <a href="">help center</a>
-          <a href="">terms of use</a>
-          <a href="">privacy</a>
-        </div>
-        <div class="social-links">
-          <a href=""><i class="fa-brands fa-facebook"></i></a>
-          <a href=""><i class="fa-brands fa-twitter"></i></a>
-          <a href=""><i class="fa-brands fa-pinterest"></i></a>
-          <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
+          </div>
+          <div class="img">
+            <img src="images/footer-bottom-img.png" alt="">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="copyright">
-        <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
-      </div>
-      <div class="img">
-        <img src="images/footer-bottom-img.png" alt="">
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
 
