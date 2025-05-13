@@ -122,12 +122,10 @@
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-
         width: 100vw;           /* full viewport width  */
-        height: 110px;           /* adjust to the image’s real height */
+        height: 110px;          /* adjust to the image’s real height */
         background: url("images/footer-bg.jpg") center / cover no-repeat;
       }
-
     </style>
   </head>
 
@@ -164,7 +162,7 @@
           <a href="#"><img id="movie-poster" src="" alt="Movie Poster"></a>
         </div>
         <div class="content">
-          <strong id="new-episodes">New Episodes</strong>
+          <strong id="content-type"></strong>
           <h4 id="movie-title">Loading...</h4>
           <div class="badge-genre">
             <div class="badge" id="movie-badge">
@@ -198,10 +196,8 @@
         </div>
       </div>
 
-      <!-- Footer (Restored from Original movie-detail.html) -->
-<!-- Divider – full-width image that acts as a partition -->
-<div class="divider"></div>
-
+      <!-- Divider -->
+      <div class="divider"></div>
 
       <!-- Video Player and Details Section -->
       <div class="main video-section">
@@ -214,7 +210,7 @@
         </div>
 
         <div class="content">
-          <strong id="video-new-episodes">New Episodes</strong>
+          <strong id="video-content-type"></strong>
           <h4 id="video-title">Loading...</h4>
           <div class="badge-genre">
             <div class="badge">
@@ -247,133 +243,133 @@
       </div>
     </section>
 
-
-  <!-- Upcoming Movies Section -->
-  <section class="upcoming-movie">
-    <div class="header">
-      <div class="subtitle">
-        <small>Online Streaming</small>
-        <h4>Upcoming Movies</h4>
+    <!-- Upcoming Movies Section -->
+    <section class="upcoming-movie">
+      <div class="header">
+        <div class="subtitle">
+          <small>Online Streaming</small>
+          <h4>Upcoming Movies</h4>
+        </div>
+        <div class="buttons">
+          <button>Movies</button>
+          <button>TV Shows</button>
+          <button>Anime</button>
+        </div>
       </div>
-      <div class="buttons">
-        <button>Movies</button>
-        <button>TV Shows</button>
-        <button>Anime</button>
-      </div>
-    </div>
-    <div class="movie-card">
-      <div class="wrapper">
-        <ul class="movie-carousel">
-          <li class="card">
-            <div class="img">
-              <a href="movie-detail.html?id=2"><img src="images/upcoming-1.png" alt="The Northman" /></a>
-            </div>
-            <div class="title">
-              <a href="movie-detail.html?id=2"><h4>The Northman</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>HD</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 137 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.5</span>
+      <div class="movie-card">
+        <div class="wrapper">
+          <ul class="movie-carousel">
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=2"><img src="images/upcoming-1.png" alt="The Northman" /></a>
               </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href="movie-detail.html?id=3"><img src="images/upcoming-2.png" alt="Doctor Strange" /></a>
-            </div>
-            <div class="title">
-              <a href="movie-detail.html?id=3"><h4>Doctor Strange</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>4K</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 126 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.5</span>
+              <div class="title">
+                <a href="movie-detail.html?id=2"><h4>The Northman</h4></a>
+                <span>2022</span>
               </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href="movie-detail.html?id=4"><img src="images/upcoming-3.png" alt="Memory" /></a>
-            </div>
-            <div class="title">
-              <a href="movie-detail.html?id=4"><h4>Memory</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>2K</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> N/A</span>
-                <span><i class="fa-solid fa-star"></i> 8.5</span>
+              <div class="footer">
+                <span>HD</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> 137 min</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
               </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href="movie-detail.html?id=5"><img src="images/upcoming-4.png" alt="Unbearable Weight" /></a>
-            </div>
-            <div class="title">
-              <a href="movie-detail.html?id=5"><h4>Unbearable Weight</h4></a>
-              <span>2022</span>
-            </div>
-            <div class="footer">
-              <span>HD</span>
-              <div class="time-rating">
-                <span><i class="fa-regular fa-clock"></i> 107 min</span>
-                <span><i class="fa-solid fa-star"></i> 8.5</span>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=3"><img src="images/upcoming-2.png" alt="Doctor Strange" /></a>
               </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-    <!-- Full Footer (from video-page.html) -->
- <footer>
-    <div class="main">
-      <div class="footer-top">
-        <nav>
-          <div class="logo">
-            <img src="images/logo.svg" alt="">
-          </div>
-          <ul class="list">
-            <li><a href="">home</a></li>
-            <li><a href="">movie</a></li>
-            <li><a href="">tv show</a></li>
-            <li><a href="">web series</a></li>
-            <li><a href="">pricing</a></li>
+              <div class="title">
+                <a href="movie-detail.html?id=3"><h4>Doctor Strange</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>4K</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> 126 min</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=4"><img src="images/upcoming-3.png" alt="Memory" /></a>
+              </div>
+              <div class="title">
+                <a href="movie-detail.html?id=4"><h4>Memory</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>2K</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> N/A</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="movie-detail.html?id=5"><img src="images/upcoming-4.png" alt="Unbearable Weight" /></a>
+              </div>
+              <div class="title">
+                <a href="movie-detail.html?id=5"><h4>Unbearable Weight</h4></a>
+                <span>2022</span>
+              </div>
+              <div class="footer">
+                <span>HD</span>
+                <div class="time-rating">
+                  <span><i class="fa-regular fa-clock"></i> 107 min</span>
+                  <span><i class="fa-solid fa-star"></i> 8.5</span>
+                </div>
+              </div>
+            </li>
           </ul>
-        </nav>
-        <hr>
-        <div class="links">
-          <div class="text-links">
-            <a href="">faq</a>
-            <a href="">help center</a>
-            <a href="">terms of use</a>
-            <a href="">privacy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Footer -->
+    <footer>
+      <div class="main">
+        <div class="footer-top">
+          <nav>
+            <div class="logo">
+              <img src="images/logo.svg" alt="">
+            </div>
+            <ul class="list">
+              <li><a href="">home</a></li>
+              <li><a href="">movie</a></li>
+              <li><a href="">tv show</a></li>
+              <li><a href="">web series</a></li>
+              <li><a href="">pricing</a></li>
+            </ul>
+          </nav>
+          <hr>
+          <div class="links">
+            <div class="text-links">
+              <a href="">faq</a>
+              <a href="">help center</a>
+              <a href="">terms of use</a>
+              <a href="">privacy</a>
+            </div>
+            <div class="social-links">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-pinterest"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
-          <div class="social-links">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-pinterest"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
+          </div>
+          <div class="img">
+            <img src="images/footer-bottom-img.png" alt="">
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="copyright">
-          <p>© 2022 <a href="">pawantech12</a>. All Rights Reserved</p>
-        </div>
-        <div class="img">
-          <img src="images/footer-bottom-img.png" alt="">
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
 
@@ -399,6 +395,12 @@
 
           // Update page content dynamically
           if (movie) {
+            // Determine content type
+            let contentType = '';
+            if (movie.Movie) contentType = 'Movie';
+            else if (movie['Web Series']) contentType = 'Web Series';
+            else if (movie['TV Show']) contentType = 'TV Show';
+
             // Movie Details Section
             document.getElementById('movie-title').innerHTML = movie.title;
             document.getElementById('movie-poster').src = movie.poster;
@@ -408,14 +410,14 @@
             document.getElementById('movie-duration').innerHTML = `<i class="fa-regular fa-clock"></i> ${movie.duration}`;
             document.getElementById('rating').textContent = movie.rating;
             document.getElementById('quality').textContent = movie.quality;
-            document.getElementById('new-episodes').textContent = movie.newEpisodes ? 'New Episodes' : '';
+            document.getElementById('content-type').textContent = contentType;
             document.getElementById('movie-genre').innerHTML = movie.genres.map(genre => `<a href="#">${genre}</a>`).join(', ');
 
             // Video Section
             const videoIframe = document.querySelector('.responsive-video-wrapper iframe');
             videoIframe.src = movie.videoUrl;
             document.getElementById('video-title').innerHTML = movie.title_2;
-            document.getElementById('video-new-episodes').textContent = movie.newEpisodes ? 'New Episodes' : '';
+            document.getElementById('video-content-type').textContent = contentType;
             document.getElementById('video-rating').textContent = movie.rating;
             document.getElementById('video-quality').textContent = movie.quality;
             document.getElementById('video-genre').innerHTML = movie.genres.map(genre => `<a href="#">${genre}</a>`).join(', ');
@@ -431,7 +433,7 @@
             document.getElementById('movie-genre').style.display = 'none';
             document.getElementById('movie-year').style.display = 'none';
             document.getElementById('movie-duration').style.display = 'none';
-            document.getElementById('new-episodes').style.display = 'none';
+            document.getElementById('content-type').style.display = 'none';
             document.querySelector('.video-section').style.display = 'none';
           }
 
@@ -456,7 +458,7 @@
           document.getElementById('movie-genre').style.display = 'none';
           document.getElementById('movie-year').style.display = 'none';
           document.getElementById('movie-duration').style.display = 'none';
-          document.getElementById('new-episodes').style.display = 'none';
+          document.getElementById('content-type').style.display = 'none';
           document.querySelector('.video-section').style.display = 'none';
         });
     </script>
