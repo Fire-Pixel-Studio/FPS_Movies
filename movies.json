@@ -11,16 +11,17 @@
     "quality": "4K",
     "genres": ["Comedy", "Action", "Adventure", "Science Fiction"],
     "Movie": true,
-    "Web Series": false,
+    "Web Series": false PIECE OF JSON
     "TV Show": false,
     "videoUrl": "https://drive.google.com/file/d/1_Yjmh6-zYDt3_-PNOHvwQ3-hLMQIpUpm/preview",
     "category": "top-rated",
-    "ratingScore": 7.7
+    "ratingScore": 7.7,
+    "relatedItems": ["6", "8", "9", "10"]
   },
   {
     "id": "2",
     "title": "The Northman",
-    "title_2": "Free Guy",
+    "title_2": "The Northman",
     "description": "A Viking prince seeks revenge for his father's murder.",
     "poster": "images/upcoming-1.png",
     "year": 2022,
@@ -33,12 +34,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/the-northman.mp4",
     "category": "upcoming",
-    "ratingScore": 8.5
+    "ratingScore": 8.5,
+    "relatedItems": ["3", "4", "5"]
   },
   {
     "id": "3",
     "title": "Doctor Strange",
-    "title_2": "Free Guy",
+    "title_2": "Doctor Strange",
     "description": "A sorcerer battles mystical threats across the multiverse.",
     "poster": "images/upcoming-2.png",
     "year": 2022,
@@ -51,12 +53,13 @@
     "TV Show": false,
     "videoUrl": "https://drive.google.com/file/d/13FR9zgnwXk46qqr9Pcvs7FY0pAidiKz7/preview",
     "category": "upcoming",
-    "ratingScore": 8.5
+    "ratingScore": 8.5,
+    "relatedItems": ["2", "4", "5"]
   },
   {
     "id": "4",
     "title": "Memory",
-    "title_2": "Free Guy",
+    "title_2": "Memory",
     "description": "An assassin confronts his failing memory and moral dilemmas.",
     "poster": "images/upcoming-3.png",
     "year": 2022,
@@ -69,12 +72,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/memory.mp4",
     "category": "upcoming",
-    "ratingScore": 8.5
+    "ratingScore": 8.5,
+    "relatedItems": ["2", "3", "5"]
   },
   {
     "id": "5",
     "title": "Unbearable Weight",
-    "title_2": "Free Guy",
+    "title_2": "Unbearable Weight",
     "description": "A reclusive actor faces personal and professional challenges.",
     "poster": "images/upcoming-4.png",
     "year": 2022,
@@ -87,12 +91,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/unbearable-weight.mp4",
     "category": "upcoming",
-    "ratingScore": 8.5
+    "ratingScore": 8.5,
+    "relatedItems": ["2", "3", "4"]
   },
   {
     "id": "6",
     "title": "Sonic",
-    "title_2": "Free Guy",
+    "title_2": "Sonic",
     "description": "A speedy hedgehog teams up to save the world.",
     "poster": "images/movie-1.png",
     "year": 2022,
@@ -105,12 +110,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/sonic.mp4",
     "category": "top-rated",
-    "ratingScore": 7.8
+    "ratingScore": 7.8,
+    "relatedItems": ["1", "8", "10"]
   },
   {
     "id": "7",
     "title": "Morbius",
-    "title_2": "Free Guy",
+    "title_2": "Morbius",
     "description": "A scientist transforms into a vampire-like creature.",
     "poster": "images/movie-2.png",
     "year": 2022,
@@ -123,12 +129,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/morbius.mp4",
     "category": "top-rated",
-    "ratingScore": 5.9
+    "ratingScore": 5.9,
+    "relatedItems": ["1", "9", "10"]
   },
   {
     "id": "8",
     "title": "Adam Project",
-    "title_2": "Free Guy",
+    "title_2": "Adam Project",
     "description": "A time-traveling pilot teams up with his younger self.",
     "poster": "images/movie-3.png",
     "year": 2022,
@@ -141,12 +148,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/adam-project.mp4",
     "category": "top-rated",
-    "ratingScore": 7.0
+    "ratingScore": 7.0,
+    "relatedItems": ["1", "6", "9"]
   },
   {
     "id": "9",
     "title": "Batman",
-    "title_2": "Free Guy",
+    "title_2": "Batman",
     "description": "A vigilante battles crime in Gotham City.",
     "poster": "images/movie-5.png",
     "year": 2022,
@@ -159,12 +167,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/batman.mp4",
     "category": "top-rated",
-    "ratingScore": 7.9
+    "ratingScore": 7.9,
+    "relatedItems": ["1", "7", "8"]
   },
   {
     "id": "10",
     "title": "Uncharted",
-    "title_2": "Free Guy",
+    "title_2": "Uncharted",
     "description": "A treasure hunter embarks on a global adventure.",
     "poster": "images/movie-6.png",
     "year": 2022,
@@ -177,12 +186,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/uncharted.mp4",
     "category": "top-rated",
-    "ratingScore": 7.0
+    "ratingScore": 7.0,
+    "relatedItems": ["1", "6", "7"]
   },
   {
     "id": "11",
     "title": "Death On The Nile",
-    "title_2": "Free Guy",
+    "title_2": "Death On The Nile",
     "description": "A detective investigates a murder on a luxury cruise.",
     "poster": "images/movie-7.png",
     "year": 2022,
@@ -195,12 +205,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/death-on-the-nile.mp4",
     "category": "top-rated",
-    "ratingScore": 6.5
+    "ratingScore": 6.5,
+    "relatedItems": ["9", "12"]
   },
   {
     "id": "12",
     "title": "The King's Man (2021)",
-    "title_2": "Free Guy",
+    "title_2": "The King's Man",
     "description": "Witness the bloody origin. As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them.",
     "poster": "images/movie-8.png",
     "year": 2022,
@@ -213,12 +224,13 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/kings-man.mp4",
     "category": "top-rated",
-    "ratingScore": 7.0
+    "ratingScore": 7.0,
+    "relatedItems": ["6", "10", "11"]
   },
   {
     "id": "13",
     "title": "Moon Knight",
-    "title_2": "Free Guy",
+    "title_2": "Moon Knight",
     "description": "A vigilante with dissociative identity disorder battles supernatural threats.",
     "poster": "images/series-1.png",
     "year": 2022,
@@ -231,12 +243,15 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/moon-knight.mp4",
     "category": "series",
-    "ratingScore": 8.6
+    "ratingScore": 8.6,
+    "season": "1",
+    "episode": "1",
+    "relatedItems": ["14", "15", "16"]
   },
   {
     "id": "14",
     "title": "Halo",
-    "title_2": "Free Guy",
+    "title_2": "Halo",
     "description": "A soldier fights in a war against an alien covenant.",
     "poster": "images/series-2.png",
     "year": 2022,
@@ -249,12 +264,13 @@
     "TV Show": true,
     "videoUrl": "https://example.com/videos/halo.mp4",
     "category": "series",
-    "ratingScore": 8.8
+    "ratingScore": 8.8,
+    "relatedItems": ["13", "15", "16"]
   },
   {
     "id": "15",
     "title": "Viking Valhalla",
-    "title_2": "Free Guy",
+    "title_2": "Viking Valhalla",
     "description": "Viking explorers navigate a turbulent era of conquest.",
     "poster": "images/series-3.png",
     "year": 2022,
@@ -267,12 +283,15 @@
     "TV Show": false,
     "videoUrl": "https://example.com/videos/viking-valhalla.mp4",
     "category": "series",
-    "ratingScore": 8.3
+    "ratingScore": 8.3,
+    "season": "1",
+    "episode": "1",
+    "relatedItems": ["13", "14", "16"]
   },
   {
     "id": "16",
     "title": "Money Heist",
-    "title_2": "Free Guy",
+    "title_2": "Money Heist",
     "description": "A criminal mastermind plans the biggest heist in history.",
     "poster": "images/series-4.png",
     "year": 2017,
@@ -285,6 +304,9 @@
     "TV Show": false,
     "videoUrl": "https://drive.google.com/file/d/1P-j7VD9YiVA0iqhvJiQUf3n0WkXGZabr/preview",
     "category": "series",
-    "ratingScore": 8.3
+    "ratingScore": 8.3,
+    "season": "1",
+    "episode": "1",
+    "relatedItems": ["13", "14", "15"]
   }
 ]
