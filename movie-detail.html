@@ -114,17 +114,118 @@
         background-color: #2980b9;
       }
 
-      /* Season and Episode Titles */
-      .season-episode {
+      /* Season and Episode Styling */
+      .date-time span {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 0.9rem;
+        color: #fff;
+      }
+
+      .date-time .season-episode span {
+        color: #fff;
+      }
+
+      .date-time .season-episode .label {
         color: yellow;
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+      }
+
+      /* Other Media Section */
+      .other-media .movie-card {
+        max-height: 600px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: #777 #333;
+      }
+
+      .other-media .movie-card::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .other-media .movie-card::-webkit-scrollbar-track {
+        background: #333;
+      }
+
+      .other-media .movie-card::-webkit-scrollbar-thumb {
+        background: #777;
+        border-radius: 4px;
+      }
+
+      .other-media .movie-carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .other-media .card {
+        display: flex;
+        align-items: center;
+        background: #222;
+        border-radius: 8px;
+        padding: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .other-media .card:hover {
+        transform: scale(1.02);
+      }
+
+      .other-media .card .img {
+        flex: 0 0 100px;
+        margin-right: 15px;
+      }
+
+      .other-media .card .img img {
+        width: 100%;
+        border-radius: 6px;
+      }
+
+      .other-media .card .title {
+        flex: 1;
+      }
+
+      .other-media .card .title h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #fff;
+      }
+
+      .other-media .card .title .season-episode {
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+
+      .other-media .card .title .season-episode span {
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      .other-media .card .title .season-episode .label {
+        color: yellow;
+      }
+
+      .other-media .card .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 0.9rem;
+      }
+
+      .other-media .card .footer span {
+        margin-bottom: 5px;
+      }
+
+      .other-media .card .footer .time-rating span {
+        margin-left: 10px;
       }
 
       /* ---------- full-width divider ---------- */
       .divider {
         position: relative;
-        left: 50%;
+        left: _dc_50%;
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
@@ -207,7 +308,6 @@
 
       <!-- Video Player and Details Section -->
       <div class="main video-section">
-        <div id="season-episode" class="season-episode"></div>
         <div class="responsive-video-wrapper">
           <iframe 
             src="" 
@@ -231,6 +331,8 @@
           <div class="date-time">
             <span id="video-year"><i class="fa-solid fa-calendar-days"></i> Loading...</span>
             <span id="video-duration"><i class="fa-regular fa-clock"></i> Loading...</span>
+            <span id="video-season" class="season-episode" style="display: none;"><span class="label">Season: </span><span class="value"></span></span>
+            <span id="video-episode" class="season-episode" style="display: none;"><span class="label">Episode: </span><span class="value"></span></span>
           </div>
           <p id="video-description">Loading...</p>
           <div class="detail-actions">
@@ -371,9 +473,13 @@
 
             // Season and Episode for Web Series
             if (movie['Web Series'] && movie.season && movie.episode) {
-              document.getElementById('season-episode').innerHTML = `Season ${movie.season}, Episode ${movie.episode}`;
+              document.getElementById('video-season').querySelector('.value').textContent = movie.season;
+              document.getElementById('video-episode').querySelector('.value').textContent = movie.episode;
+              document.getElementById('video-season').style.display = 'inline-block';
+              document.getElementById('video-episode').style.display = 'inline-block';
             } else {
-              document.getElementById('season-episode').style.display = 'none';
+              document.getElementById('video-season').style.display = 'none';
+              document.getElementById('video-episode').style.display = 'none';
             }
 
             // Other Media Section
@@ -397,7 +503,12 @@
                   </div>
                   <div class="title">
                     <a href="#" class="related-link"><h4>${relatedMovie.title}</h4></a>
-                    <span>${relatedMovie.year}</span>
+                    <div class="season-episode">
+                      ${relatedMovie['Web Series'] && relatedMovie.season && relatedMovie.episode ? `
+                        <span><span class="label">Season: </span>${relatedMovie.season}</span>
+                        <span><span class="label">Episode: </span>${relatedMovie.episode}</span>
+                      ` : ''}
+                    </div>
                   </div>
                   <div class="footer">
                     <span>${relatedMovie.quality}</span>
@@ -433,10 +544,13 @@
 
                   // Update season and episode
                   if (relatedMovie['Web Series'] && relatedMovie.season && relatedMovie.episode) {
-                    document.getElementById('season-episode').innerHTML = `Season ${relatedMovie.season}, Episode ${relatedMovie.episode}`;
-                    document.getElementById('season-episode').style.display = 'block';
+                    document.getElementById('video-season').querySelector('.value').textContent = relatedMovie.season;
+                    document.getElementById('video-episode').querySelector('.value').textContent = relatedMovie.episode;
+                    document.getElementById('video-season').style.display = 'inline-block';
+                    document.getElementById('video-episode').style.display = 'inline-block';
                   } else {
-                    document.getElementById('season-episode').style.display = 'none';
+                    document.getElementById('video-season').style.display = 'none';
+                    document.getElementById('video-episode').style.display = 'none';
                   }
 
                   // Scroll to video section
@@ -466,7 +580,7 @@
             watchNowBtn.addEventListener('click', () => {
               const videoSection = document.querySelector('.video-section');
               if (videoSection) {
-                videoSection.scrollIntoView({ behavior: 'smooth' });
+                videoSection.scrollIntoView({ behavior: Dante'smooth' });
               }
             });
           }
