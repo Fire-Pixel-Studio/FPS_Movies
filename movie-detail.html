@@ -114,16 +114,22 @@
         background-color: #2980b9;
       }
 
+      /* Season and Episode Titles */
+      .season-episode {
+        color: yellow;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
       /* ---------- full-width divider ---------- */
       .divider {
-        /* make it stretch edge-to-edge regardless of parent padding */
         position: relative;
         left: 50%;
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        width: 100vw;           /* full viewport width  */
-        height: 110px;          /* adjust to the image’s real height */
+        width: 100vw;
+        height: 110px;
         background: url("images/footer-bg.jpg") center / cover no-repeat;
       }
     </style>
@@ -201,6 +207,7 @@
 
       <!-- Video Player and Details Section -->
       <div class="main video-section">
+        <div id="season-episode" class="season-episode"></div>
         <div class="responsive-video-wrapper">
           <iframe 
             src="" 
@@ -243,12 +250,12 @@
       </div>
     </section>
 
-    <!-- Upcoming Movies Section -->
-    <section class="upcoming-movie">
+    <!-- Other Media Section -->
+    <section class="other-media">
       <div class="header">
         <div class="subtitle">
           <small>Online Streaming</small>
-          <h4>Upcoming Movies</h4>
+          <h4 id="other-media-title">Other Content</h4>
         </div>
         <div class="buttons">
           <button>Movies</button>
@@ -258,71 +265,8 @@
       </div>
       <div class="movie-card">
         <div class="wrapper">
-          <ul class="movie-carousel">
-            <li class="card">
-              <div class="img">
-                <a href="movie-detail.html?id=2"><img src="images/upcoming-1.png" alt="The Northman" /></a>
-              </div>
-              <div class="title">
-                <a href="movie-detail.html?id=2"><h4>The Northman</h4></a>
-                <span>2022</span>
-              </div>
-              <div class="footer">
-                <span>HD</span>
-                <div class="time-rating">
-                  <span><i class="fa-regular fa-clock"></i> 137 min</span>
-                  <span><i class="fa-solid fa-star"></i> 8.5</span>
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="img">
-                <a href="movie-detail.html?id=3"><img src="images/upcoming-2.png" alt="Doctor Strange" /></a>
-              </div>
-              <div class="title">
-                <a href="movie-detail.html?id=3"><h4>Doctor Strange</h4></a>
-                <span>2022</span>
-              </div>
-              <div class="footer">
-                <span>4K</span>
-                <div class="time-rating">
-                  <span><i class="fa-regular fa-clock"></i> 126 min</span>
-                  <span><i class="fa-solid fa-star"></i> 8.5</span>
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="img">
-                <a href="movie-detail.html?id=4"><img src="images/upcoming-3.png" alt="Memory" /></a>
-              </div>
-              <div class="title">
-                <a href="movie-detail.html?id=4"><h4>Memory</h4></a>
-                <span>2022</span>
-              </div>
-              <div class="footer">
-                <span>2K</span>
-                <div class="time-rating">
-                  <span><i class="fa-regular fa-clock"></i> N/A</span>
-                  <span><i class="fa-solid fa-star"></i> 8.5</span>
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="img">
-                <a href="movie-detail.html?id=5"><img src="images/upcoming-4.png" alt="Unbearable Weight" /></a>
-              </div>
-              <div class="title">
-                <a href="movie-detail.html?id=5"><h4>Unbearable Weight</h4></a>
-                <span>2022</span>
-              </div>
-              <div class="footer">
-                <span>HD</span>
-                <div class="time-rating">
-                  <span><i class="fa-regular fa-clock"></i> 107 min</span>
-                  <span><i class="fa-solid fa-star"></i> 8.5</span>
-                </div>
-              </div>
-            </li>
+          <ul class="movie-carousel" id="other-media-carousel">
+            <!-- Dynamic content will be inserted here -->
           </ul>
         </div>
       </div>
@@ -379,11 +323,11 @@
 
     <!-- Load dynamic movie data and handle scroll -->
     <script>
-      // Get movie ID from URL (e.g., /movie-detail.html?id=1)
+      // Get movie ID from URL
       const urlParams = new URLSearchParams(window.location.search);
-      const movieId = urlParams.get('id') || '1'; // Default to first movie if no ID
+      const movieId = urlParams.get('id') || '1';
 
-      // Fetch movie data from movies.json
+      // Fetch movie data
       fetch('movies.json')
         .then(res => {
           if (!res.ok) throw new Error('Failed to load movies.json');
@@ -393,7 +337,7 @@
           // Find the movie by ID
           const movie = movies.find(m => m.id === movieId);
 
-          // Update page content dynamically
+          // Update page content
           if (movie) {
             // Determine content type
             let contentType = '';
@@ -424,9 +368,86 @@
             document.getElementById('video-year').innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${movie.year}`;
             document.getElementById('video-duration').innerHTML = `<i class="fa-regular fa-clock"></i> ${movie.duration}`;
             document.getElementById('video-description').textContent = movie.description;
+
+            // Season and Episode for Web Series
+            if (movie['Web Series'] && movie.season && movie.episode) {
+              document.getElementById('season-episode').innerHTML = `Season ${movie.season}, Episode ${movie.episode}`;
+            } else {
+              document.getElementById('season-episode').style.display = 'none';
+            }
+
+            // Other Media Section
+            const otherMediaTitle = document.getElementById('other-media-title');
+            const otherMediaCarousel = document.getElementById('other-media-carousel');
+            let sectionTitle = '';
+            if (movie.category === 'series') {
+              sectionTitle = 'Other Episodes';
+            } else if (movie.category === 'top-rated' || movie.category === 'upcoming') {
+              sectionTitle = movie['TV Show'] ? 'Other TV Shows' : 'Other Movies';
+            }
+            otherMediaTitle.textContent = sectionTitle;
+
+            // Populate related items
+            if (movie.relatedItems && movie.relatedItems.length > 0) {
+              const relatedMovies = movies.filter(m => movie.relatedItems.includes(m.id));
+              otherMediaCarousel.innerHTML = relatedMovies.map(relatedMovie => `
+                <li class="card" data-id="${relatedMovie.id}">
+                  <div class="img">
+                    <a href="#" class="related-link"><img src="${relatedMovie.poster}" alt="${relatedMovie.title}"></a>
+                  </div>
+                  <div class="title">
+                    <a href="#" class="related-link"><h4>${relatedMovie.title}</h4></a>
+                    <span>${relatedMovie.year}</span>
+                  </div>
+                  <div class="footer">
+                    <span>${relatedMovie.quality}</span>
+                    <div class="time-rating">
+                      <span><i class="fa-regular fa-clock"></i> ${relatedMovie.duration}</span>
+                      <span><i class="fa-solid fa-star"></i> ${relatedMovie.ratingScore || 'N/A'}</span>
+                    </div>
+                  </div>
+                </li>
+              `).join('');
+            } else {
+              otherMediaCarousel.innerHTML = '<p>No related content available.</p>';
+            }
+
+            // Add click event for related items
+            document.querySelectorAll('.related-link').forEach(link => {
+              link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const card = e.target.closest('.card');
+                const relatedId = card.dataset.id;
+                const relatedMovie = movies.find(m => m.id === relatedId);
+                if (relatedMovie) {
+                  // Update video player
+                  videoIframe.src = relatedMovie.videoUrl;
+                  document.getElementById('video-title').innerHTML = relatedMovie.title_2;
+                  document.getElementById('video-content-type').textContent = relatedMovie['Web Series'] ? 'Web Series' : relatedMovie['TV Show'] ? 'TV Show' : 'Movie';
+                  document.getElementById('video-rating').textContent = relatedMovie.rating;
+                  document.getElementById('video-quality').textContent = relatedMovie.quality;
+                  document.getElementById('video-genre').innerHTML = relatedMovie.genres.map(genre => `<a href="#">${genre}</a>`).join(', ');
+                  document.getElementById('video-year').innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${relatedMovie.year}`;
+                  document.getElementById('video-duration').innerHTML = `<i class="fa-regular fa-clock"></i> ${relatedMovie.duration}`;
+                  document.getElementById('video-description').textContent = relatedMovie.description;
+
+                  // Update season and episode
+                  if (relatedMovie['Web Series'] && relatedMovie.season && relatedMovie.episode) {
+                    document.getElementById('season-episode').innerHTML = `Season ${relatedMovie.season}, Episode ${relatedMovie.episode}`;
+                    document.getElementById('season-episode').style.display = 'block';
+                  } else {
+                    document.getElementById('season-episode').style.display = 'none';
+                  }
+
+                  // Scroll to video section
+                  const videoSection = document.querySelector('.video-section');
+                  videoSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              });
+            });
           } else {
             document.getElementById('movie-title').innerHTML = 'Movie Not Found';
-            document.getElementById('movie-description').textContent = 'Sorry, the movie you are looking for does not exist.';
+            document.getElementById('movie-description').textContent = 'Sorry, the media you are looking for does not exist.';
             document.getElementById('movie-poster').style.display = 'none';
             document.getElementById('scrollBtn').style.display = 'none';
             document.getElementById('movie-badge').style.display = 'none';
@@ -435,6 +456,8 @@
             document.getElementById('movie-duration').style.display = 'none';
             document.getElementById('content-type').style.display = 'none';
             document.querySelector('.video-section').style.display = 'none';
+            document.getElementById('other-media-title').textContent = 'Other Content';
+            document.getElementById('other-media-carousel').innerHTML = '<p>No related content available.</p>';
           }
 
           // Scroll to video section on "Watch Now" click
@@ -451,7 +474,7 @@
         .catch(error => {
           console.error('Error loading movie data:', error);
           document.getElementById('movie-title').innerHTML = 'Error';
-          document.getElementById('movie-description').textContent = 'Failed to load movie details.';
+          document.getElementById('movie-description').textContent = 'Failed to load media details.';
           document.getElementById('movie-poster').style.display = 'none';
           document.getElementById('scrollBtn').style.display = 'none';
           document.getElementById('movie-badge').style.display = 'none';
@@ -460,6 +483,8 @@
           document.getElementById('movie-duration').style.display = 'none';
           document.getElementById('content-type').style.display = 'none';
           document.querySelector('.video-section').style.display = 'none';
+          document.getElementById('other-media-title').textContent = 'Other Content';
+          document.getElementById('other-media-carousel').innerHTML = '<p>Failed to load related content.</p>';
         });
     </script>
   </body>
