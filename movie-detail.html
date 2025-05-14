@@ -152,7 +152,7 @@
         border-radius: 4px;
       }
 
-      .other-media .movie-carousel {
+      .other-media .wrapper {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -222,6 +222,15 @@
       .other-media .card .footer span {
         display: block;
         margin-bottom: 5px;
+      }
+
+      .other-media .card .footer .time-rating {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .other-media .card .footer .time-rating span {
+        margin: 0;
       }
 
       /* Full-width divider */
@@ -355,7 +364,7 @@
     </section>
 
     <!-- Other Media Section -->
-    <section class="other-media">
+    <section class="other-media same">
       <div class="header">
         <div class="subtitle">
           <small>Online Streaming</small>
@@ -368,11 +377,9 @@
         </div>
       </div>
       <div class="movie-card">
-        <div class="wrapper">
-          <ul class="movie-carousel" id="other-media-carousel">
-            <!-- Dynamic content will be inserted here -->
-          </ul>
-        </div>
+        <ul class="wrapper" id="other-media-carousel">
+          <!-- Dynamic content will be inserted here -->
+        </ul>
       </div>
     </section>
 
@@ -519,8 +526,10 @@
                   </div>
                   <div class="footer">
                     <span>${relatedMovie.quality}</span>
-                    <span><i class="fa-regular fa-clock"></i> ${relatedMovie.duration}</span>
-                    <span><i class="fa-solid fa-star"></i> ${relatedMovie.ratingScore || 'N/A'}</span>
+                    <div class="time-rating">
+                      <span><i class="fa-regular fa-clock"></i> ${relatedMovie.duration}</span>
+                      <span><i class="fa-solid fa-star"></i> ${relatedMovie.ratingScore || 'N/A'}</span>
+                    </div>
                   </div>
                 </li>
               `).join('');
