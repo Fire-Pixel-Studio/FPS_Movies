@@ -222,10 +222,10 @@
         margin-left: 10px;
       }
 
-      /* ---------- full-width divider ---------- */
+      /* Full-width divider */
       .divider {
         position: relative;
-        left: _dc_50%;
+        left: 50%;
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
@@ -428,16 +428,20 @@
       // Get movie ID from URL
       const urlParams = new URLSearchParams(window.location.search);
       const movieId = urlParams.get('id') || '1';
+      console.log('Movie ID:', movieId);
 
       // Fetch movie data
       fetch('movies.json')
         .then(res => {
+          console.log('Fetch Response:', res);
           if (!res.ok) throw new Error('Failed to load movies.json');
           return res.json();
         })
         .then(movies => {
+          console.log('Movies Data:', movies);
           // Find the movie by ID
           const movie = movies.find(m => m.id === movieId);
+          console.log('Selected Movie:', movie);
 
           // Update page content
           if (movie) {
@@ -496,6 +500,7 @@
             // Populate related items
             if (movie.relatedItems && movie.relatedItems.length > 0) {
               const relatedMovies = movies.filter(m => movie.relatedItems.includes(m.id));
+              console.log('Related Movies:', relatedMovies);
               otherMediaCarousel.innerHTML = relatedMovies.map(relatedMovie => `
                 <li class="card" data-id="${relatedMovie.id}">
                   <div class="img">
@@ -580,7 +585,7 @@
             watchNowBtn.addEventListener('click', () => {
               const videoSection = document.querySelector('.video-section');
               if (videoSection) {
-                videoSection.scrollIntoView({ behavior: Dante'smooth' });
+                videoSection.scrollIntoView({ behavior: 'smooth' });
               }
             });
           }
