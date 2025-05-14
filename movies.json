@@ -32,7 +32,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/the-northman.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1YBFnmOfa-rPF6uoS9g3Cda9CZoGKEh4i/preview",
     "category": "upcoming",
     "ratingScore": 8.5,
     "relatedItems": ["3", "4", "5"]
@@ -70,7 +70,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/memory.mp4",
+    "videoUrl": "https://drive.google.com/file/d/14cC57TRNUUCn16WQikmENcUdgPE2QwIF/preview",
     "category": "upcoming",
     "ratingScore": 8.5,
     "relatedItems": ["2", "3", "5"]
@@ -89,7 +89,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/unbearable-weight.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1hUG1J5eNqvMWpolGujFz5W5lpZm1ME7d/preview",
     "category": "upcoming",
     "ratingScore": 8.5,
     "relatedItems": ["2", "3", "4"]
@@ -108,7 +108,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/sonic.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1g3TBODBfclwlc6JSLtvcVqji7_ItV_SE/preview",
     "category": "top-rated",
     "ratingScore": 7.8,
     "relatedItems": ["1", "8", "10"]
@@ -127,7 +127,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/morbius.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1WsTP7YoEYfPtHAXcOrBKk4ISxe1aPdJc/preview",
     "category": "top-rated",
     "ratingScore": 5.9,
     "relatedItems": ["1", "9", "10"]
@@ -146,7 +146,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/adam-project.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1Lf-klN49je8nhSjbwY-bj8y1qiJvz4k2/preview",
     "category": "top-rated",
     "ratingScore": 7.0,
     "relatedItems": ["1", "6", "9"]
@@ -165,7 +165,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/batman.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1rMitzW_9F30hzn9irLw6Z1HxXnr2CQ2Z/preview",
     "category": "top-rated",
     "ratingScore": 7.9,
     "relatedItems": ["1", "7", "8"]
@@ -184,7 +184,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/uncharted.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1LC4lOFnPeCK3wDwca4_eQ45J99qsFtWF/preview",
     "category": "top-rated",
     "ratingScore": 7.0,
     "relatedItems": ["1", "6", "7"]
@@ -203,7 +203,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/death-on-the-nile.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1JGXMEJh9UucwWWKigk63b54LqyqF6gFt/preview",
     "category": "top-rated",
     "ratingScore": 6.5,
     "relatedItems": ["9", "12"]
@@ -222,7 +222,7 @@
     "Movie": true,
     "Web Series": false,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/kings-man.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1d0X-9tNDNcGdQstopiTATQWZ-rgym-DH/preview",
     "category": "top-rated",
     "ratingScore": 7.0,
     "relatedItems": ["6", "10", "11"]
@@ -241,7 +241,7 @@
     "Movie": false,
     "Web Series": true,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/moon-knight.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1H2vENX2O5rZXfmtjBDmXcKVXNpctHTjV/preview",
     "category": "series",
     "ratingScore": 8.6,
     "season": "1",
@@ -262,7 +262,7 @@
     "Movie": false,
     "Web Series": false,
     "TV Show": true,
-    "videoUrl": "https://example.com/videos/halo.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1vhrNeADm_SmuLU4KN9VlSTxwEHId0qKV/preview",
     "category": "series",
     "ratingScore": 8.8,
     "relatedItems": ["13", "15", "16"]
@@ -281,7 +281,7 @@
     "Movie": false,
     "Web Series": true,
     "TV Show": false,
-    "videoUrl": "https://example.com/videos/viking-valhalla.mp4",
+    "videoUrl": "https://drive.google.com/file/d/1CkZQddHajMHUPy0pAXv1PLlEOu_Hz6lR/preview",
     "category": "series",
     "ratingScore": 8.3,
     "season": "1",
